@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Charset -->
+  <meta charset="utf-8">
+  <!-- mobile setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Title -->
+  <title>DEMARCHES-PUBLIQUES.COM</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <!-- CSS & Boostrap-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/dataTables.bootstrap4.min.css">
+  <!-- Fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Fonticons -->
+  <link rel="stylesheet" type="text/css" href="assets/fonticons/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonticons/css/font-awesome.min.css">
+
+
+
+</head>
+<body>
+
+<!-- DRAPEAU -->
+<div class="container-fluid">
+  <div class="row fond_bleu pt-4">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <center>
+        <img class="drapeau" src="assets/img/drapeau.png">
+        <p class="texte_blanc slogan"><i>Liberté, Egalité, Fraternité</i></p>
+      </center>
+    </div>
+    <div class="col-md-8">
+      <p class="texte_blanc nom_site">DEMARCHES-PUBLIQUES.COM</p>
+      <p class="texte_blanc slogan1">Obtention de vos actes d'état civil officiels en ligne</p>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+
+<!-- NAVIGATION BAR -->
+<div class="topnav" id="myTopnav">
+  <a href=""><i class="fa fa-home"></i></a>
+  <a href="dashboard_articles.php" class="active">Gestion - Actualités</a>
+  <a href="">Gestion - Acte de naissance</a>
+  <a href="">Gestion - Extrait casier judiciaire</a>
+  <a href="">Gestion - Acte de décès</a>
+  <a href="">Gestion - Acte de mariage</a>
+  <a href="login.html"><i class="fa fa-power-off"> Déconnexion</i></a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+
+  <!-- BODY -->
+  <div class="container-fluid">
+
+    <div class="row pt-5">
+      <div class="col-md-12 col-lg-12">
+        <section id="">
+          <div class="container">
+            <h2 class="pb-3">Gestion des actualités </h2>
+            <table id="table_id" class="display table-striped table table-bordered dt-responsive">
+                <thead>
+                  <tr>
+                    <th style="width:80%;">Titres</th>
+                    <th style="width:20%;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td></td>
+                    <td>
+                      <center>
+                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <button class="btn btn-info"><i class="fa fa-edit"></i></button>
+                        <a href="traitement/article_creation.php" class="btn btn-success"><i class="fa fa-plus"></i></a>
+                      </center>
+                    </td>
+                  </tr>
+                </tbody>
+            </table>
+            <!-- Ajout -->
+            <a href="traitement/article_creation.php" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un article</a>
+            <!-- Ajout -->
+          </div>
+        </section>
+      </div>
+    </div>
+
+  </div>
+  <!-- BODY -->
+
+
+
+<!-- SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/sweetalert2.all.js"></script>
+  <script src="assets/js/sweetalert2.all.min.js"></script>
+
+<!-- DATATABLES -->
+  <script type="text/javascript" src="assets/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="assets/js/dataTables.bootstrap4.min.js"></script>
+  <script type="text/javascript" src="assets/js/dataTables.responsive.min.js"></script>
+  <script type="text/javascript" src="assets/js/responsive.bootstrap4.min.js"></script>
+  <script type="text/javascript">
+      $(document).ready(function() {
+        $('#table_id').DataTable();
+    } );
+  </script>
+
+
+</body>
+</html>
