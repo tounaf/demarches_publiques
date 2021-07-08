@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Charset -->
+  <meta charset="utf-8">
+  <!-- mobile setting -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Title -->
+  <title>DEMARCHES-PUBLIQUES.COM</title>
+  <!-- favicon -->
+  <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+  <!-- CSS & Boostrap-->
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.css">
+  <!-- Fonts  -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+  <!-- Fonticons -->
+  <link rel="stylesheet" type="text/css" href="assets/fonticons/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="assets/fonticons/css/font-awesome.min.css">
+
+
+<style type="text/css">
+  html {
+  scroll-behavior: smooth;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: rgb(4, 170, 109);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+</style>
+
+
+</head>
+<body>
+
+<!-- ECRITO -->
+<div class="container-fluid">
+  <div class="row pt-2">
+    <div class="col-md-12">
+      <center>
+        <p>Site indépendant de l'administration française, offrant un service d'accompagnement pour faciliter l'obtention d'actes civils</p>
+      </center>
+    </div>
+  </div>
+</div>
+
+<!-- DRAPEAU -->
+<div class="container-fluid">
+  <div class="row fond_bleu pt-4">
+    <div class="col-md-1"></div>
+    <div class="col-md-2">
+      <center>
+        <img class="drapeau" src="assets/img/drapeau.png">
+        <p class="texte_blanc slogan"><i>Liberté, Egalité, Fraternité</i></p>
+      </center>
+    </div>
+    <div class="col-md-8">
+      <p class="texte_blanc nom_site">DEMARCHES-PUBLIQUES.COM</p>
+      <p class="texte_blanc slogan1">Obtention de vos actes d'état civil officiels en ligne</p>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+</div>
+
+<!-- NAVIGATION BAR -->
+<div class="topnav" id="myTopnav">
+  <a href="index.php" class="active"><i class="fa fa-home"></i></a>
+  <a href="acteDeNaissance.php">Acte de naissance</a>
+  <a href="casierJudiciaire.php">Extrait casier judiciaire</a>
+  <a href="acteDeDeces.php">Acte de décès</a>
+  <a href="acteDeMariage.php">Acte de mariage</a>
+  <a href="actualites.php">Actualités</a>
+  <a href="">Contact</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <i class="fa fa-bars"></i>
+  </a>
+</div>
+
+<!-- FORMULAIRES -->
+
+<br>
+
+<div class="container">
+	<div class="col-md-12">
+		<h1 style="color: #ee2436;">Gestion des cookies</h1>
+		<br>
+		<h5>Votre vie privée est importante pour nous</h5>
+		<p style="text-align: justify;">Les cookies sont de très petits fichiers texte qui sont stockés sur votre ordinateur lorsque vous visitez un site web. Nous utilisons les cookies à des fins diverses et pour améliorer votre expérience en ligne sur notre site web (par exemple, pour mémoriser les détails de connexion de votre compte).Vous pouvez modifier vos préférences et refuser que certains types de cookies soient stockés sur votre ordinateur lorsque vous naviguez sur notre site web. Vous pouvez également supprimer les cookies déjà stockés sur votre ordinateur, mais n'oubliez pas que la suppression des cookies peut vous empêcher d'utiliser certaines parties de notre site web.</p>
+		
+		<br>
+		<h5>Cookies strictement nécessaires</h5>
+		<p style="text-align: justify;">Ces cookies sont essentiels pour vous fournir les services disponibles sur notre site web et pour vous permettre d'utiliser certaines fonctionnalités de notre site web.Sans ces cookies, nous ne pouvons pas vous fournir certains services sur notre site web.</p>
+		<label class="switch">
+		  <input style="margin: 20px;" type="checkbox" checked>
+		  <span class="slider round"></span>
+		</label>
+
+		<br>
+		<h5>Cookies de fonctionnalités</h5>
+		<p style="text-align: justify;">Ces cookies sont utilisés pour vous offrir une expérience plus personnalisée sur notre site web et pour mémoriser les choix que vous faites lorsque vous utilisez notre site web.Par exemple, nous pouvons utiliser des cookies de fonctionnalité pour mémoriser vos préférences linguistiques ou vos données de connexion.</p>
+		<label class="switch">
+		  <input style="margin: 20px;" type="checkbox" style="border-color: #fff;">
+		  <span class="slider round"></span>
+		</label>
+
+		<br>
+		<h5>Cookies de traçage</h5>
+		<p style="text-align: justify;">Ces cookies sont utilisés pour collecter des informations afin d'analyser le trafic sur notre site Web et la façon dont les visiteurs utilisent notre site Web. Par exemple, ces cookies peuvent suivre des éléments tels que le temps que vous passez sur le site Web ou les pages que vous visitez, ce qui nous aide à comprendre comment nous pouvons améliorer notre site Web pour vous. Les informations recueillies par ces cookies de suivi et de performance ne permettent pas d'identifier un visiteur individuel.</p>
+		<label class="switch">
+		  <input style="margin: 20px;" type="checkbox" style="border-color: #fff;">
+		  <span class="slider round"></span>
+		</label>
+
+		<br>
+		<h5>Cookies de ciblage et de publicité</h5>
+		<p style="text-align: justify;">Ces cookies sont utilisés pour afficher des publicités susceptibles de vous intéresser en fonction de vos habitudes de navigation.Ces cookies, tels qu'ils sont servis par nos fournisseurs de contenu et/ou de publicité, peuvent combiner les informations qu'ils ont collectées sur notre site web avec d'autres informations qu'ils ont collectées de manière indépendante concernant les activités de votre navigateur web sur leur réseau de sites web.Si vous choisissez de supprimer ou de désactiver ces cookies de ciblage ou de publicité, vous verrez toujours des publicités, mais elles pourraient ne pas être pertinentes pour vous.</p>
+		<label class="switch">
+		  <input style="margin: 20px;" type="checkbox" style="border-color: #fff;">
+		  <span class="slider round"></span>
+		</label>
+
+		<br>
+		<h5>Plus d'informations</h5>
+		<p style="text-align: justify;">Pour toute question relative à notre politique en matière de cookies et à vos choix, veuillez <a href="contact.php">nous contacter.</a></p>
+
+	</div>
+</div>
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="container-fluid">
+    <div class="row fond_bleu pt-3">
+      <div class="col-md-4"><center><p class="texte_blanc">FAQ</p></center></div>
+      <div class="col-md-4"><center><p class="texte_blanc">CGV</p></center></div>
+      <div class="col-md-4"><center><p class="texte_blanc">Contact</p></center></div>
+    </div>
+  </div>
+</footer>
+
+
+  <!-- SCRIPTS -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/sweetalert2.all.js"></script>
+  <script src="assets/js/sweetalert2.all.min.js"></script>
+
+
+
+</body>
+</html>

@@ -29,6 +29,11 @@
 </head>
 <body>
 
+    <?php
+    include("cookie.php");
+    ?>
+
+
 <!-- ECRITO -->
 <div class="container-fluid">
   <div class="row pt-2">
@@ -62,11 +67,11 @@
 <div class="topnav" id="myTopnav">
   <a href="index.php" class="active"><i class="fa fa-home"></i></a>
   <a href="acteDeNaissance.php">Acte de naissance</a>
-  <a href="">Extrait casier judiciaire</a>
-  <a href="">Acte de décès</a>
-  <a href="">Acte de mariage</a>
+  <a href="casierJudiciaire.php">Extrait casier judiciaire</a>
+  <a href="acteDeDeces.php">Acte de décès</a>
+  <a href="acteDeMariage.php">Acte de mariage</a>
   <a href="actualites.php">Actualités</a>
-  <a href="">Contact</a>
+  <a href="contact.php">Contact</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -95,7 +100,9 @@
       <br>
       <h5><center>ACTE DE NAISSANCE EN LIGNE</center></h5>
       <center><p>Demander une copie intégrale, un extrait avec ou sans filitation ou un extrait plurilingue de votre acte de naissance en ligne</p></center>
-      <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="acteDeNaissance.php">
+        <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
     <div class="col-md-3">
       <center>
@@ -104,7 +111,9 @@
       <br>
       <h5><center>EXTRAIT DE CASIER JUDICIAIRE</center></h5>
       <center><p>Demander un extrait, avec ou sans traduction de vote casier judiciaire en ligne</p></center>
-      <button class="boutton_rose bouttons_vague1">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="casierJudiciaire.php">
+        <button class="boutton_rose bouttons_vague1">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
     <div class="col-md-3">
       <center>
@@ -113,7 +122,9 @@
       <br>
       <h5><center>ACTE DE DÉCÈS</center></h5>
       <center><p class="textes_vague1">Demander une copie intégrale ou un extrait plurilingue d'un acte de décès en ligne</p></center>
-      <button class="boutton_rose bouttons_vague1">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="acteDeDeces.php">
+        <button class="boutton_rose bouttons_vague1">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
     <div class="col-md-3">
       <center>
@@ -122,7 +133,9 @@
       <br>
       <h5><center>ACTE DE MARIAGE</center></h5>
       <center><p class="textes_vague1">Demander une copie intégrale, un extrait avec ou sans filitation ou un extrait plurilingue de votre acte de mariage en ligne</p></center>
-      <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="acteDeMariage.php">
+        <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
   </div>
 
@@ -173,7 +186,9 @@
       <p>Obtenez une copie intégrale, un extrait avec ou sans filitation ou un extrait plurilingue de votre acte de naissance officiel en ligne. Votre document vous sera envoyé par courrier postal sans vous déplacer à la mairie de votre naissance.</p>
     </div>
     <div class="col-md-3">
-      <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="acteDeNaissance.php">
+        <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
   </div>
   <hr>
@@ -183,7 +198,9 @@
       <p>Obtenez une copie intégrale ou un extrait avec ou sans filiation de votre acte de mariage officiel en ligne. Votre document vous sera envoyé par courrier postal à votre domicile sans que vous n'ayez à vous déplacer dans la mairie où vous vous êtes marié.</p>
     </div>
     <div class="col-md-3">
-      <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="acteDeMariage.php">
+        <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
   </div>
   <hr>
@@ -193,7 +210,9 @@
       <p>Obtenez une copie intégrale ou un extrait plurilingue de l'acte de décès officiel en ligne d'un proche sans aucun déplacement de votre part.</p>
     </div>
     <div class="col-md-3">
-      <button class="boutton_rose" value="">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="acteDeDeces.php">
+        <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
   </div>
   <hr>
@@ -203,7 +222,9 @@
       <p>Obtenez un extrait, avec ou sans traduction de votre casier judiciaire officiel en ligne.</p>
     </div>
     <div class="col-md-3">
-      <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      <a href="casierJudiciaire.php">
+        <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
+      </a>
     </div>
   </div>
   <hr>

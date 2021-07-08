@@ -26,150 +26,158 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<style>
+.height {
+    min-height: 200px;
+}
 
+.icon {
+    font-size: 47px;
+    color: #5CB85C;
+}
+
+.iconbig {
+    font-size: 77px;
+    color: #5CB85C;
+}
+
+.table > tbody > tr > .emptyrow {
+    border-top: none;
+}
+
+.table > thead > tr > .emptyrow {
+    border-bottom: none;
+}
+
+.table > tbody > tr > .highrow {
+    border-top: 3px solid;
+}
+</style>
 
 </head>
 <body>
 
-
 <div class="container">
-    <div class="stepwizard">
-        <div class="stepwizard-row setup-panel">
-            <div class="stepwizard-step col-xs-3">
-                <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
-                <p><small>Shipper</small></p>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="text-center">
+                <i class="fa fa-search-plus pull-left icon"></i>
+                <h2>Invoice for purchase #33221</h2>
             </div>
-            <div class="stepwizard-step col-xs-3">
-                <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
-                <p><small>Destination</small></p>
-            </div>
-            <div class="stepwizard-step col-xs-3">
-                <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
-                <p><small>Schedule</small></p>
-            </div>
-            <div class="stepwizard-step col-xs-3">
-                <a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
-                <p><small>Cargo</small></p>
+            <hr>
+            <div class="row">
+                <div class="col-xs-12 col-md-3 col-lg-3 pull-left">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Billing Details</div>
+                        <div class="panel-body">
+                            <strong>David Peere:</strong><br>
+                            1111 Army Navy Drive<br>
+                            Arlington<br>
+                            VA<br>
+                            <strong>22 203</strong><br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Payment Information</div>
+                        <div class="panel-body">
+                            <strong>Card Name:</strong> Visa<br>
+                            <strong>Card Number:</strong> ***** 332<br>
+                            <strong>Exp Date:</strong> 09/2020<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Order Preferences</div>
+                        <div class="panel-body">
+                            <strong>Gift:</strong> No<br>
+                            <strong>Express Delivery:</strong> Yes<br>
+                            <strong>Insurance:</strong> No<br>
+                            <strong>Coupon:</strong> No<br>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-3 col-lg-3 pull-right">
+                    <div class="panel panel-default height">
+                        <div class="panel-heading">Shipping Address</div>
+                        <div class="panel-body">
+                            <strong>David Peere:</strong><br>
+                            1111 Army Navy Drive<br>
+                            Arlington<br>
+                            VA<br>
+                            <strong>22 203</strong><br>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-    <form role="form">
-        <div class="panel panel-primary setup-content" id="step-1">
-            <div class="panel-heading">
-                 <h3 class="panel-title">Shipper</h3>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label">First Name</label>
-                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter First Name" />
+    <div class="row">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="text-center"><strong>Order summary</strong></h3>
                 </div>
-                <div class="form-group">
-                    <label class="control-label">Last Name</label>
-                    <input maxlength="100" type="text" required="required" class="form-control" placeholder="Enter Last Name" />
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <td><strong>Item Name</strong></td>
+                                    <td class="text-center"><strong>Item Price</strong></td>
+                                    <td class="text-center"><strong>Item Quantity</strong></td>
+                                    <td class="text-right"><strong>Total</strong></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Samsung Galaxy S5</td>
+                                    <td class="text-center">$900</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-right">$900</td>
+                                </tr>
+                                <tr>
+                                    <td>Samsung Galaxy S5 Extra Battery</td>
+                                    <td class="text-center">$30.00</td>
+                                    <td class="text-center">1</td>
+                                    <td class="text-right">$30.00</td>
+                                </tr>
+                                <tr>
+                                    <td>Screen protector</td>
+                                    <td class="text-center">$7</td>
+                                    <td class="text-center">4</td>
+                                    <td class="text-right">$28</td>
+                                </tr>
+                                <tr>
+                                    <td class="highrow"></td>
+                                    <td class="highrow"></td>
+                                    <td class="highrow text-center"><strong>Subtotal</strong></td>
+                                    <td class="highrow text-right">$958.00</td>
+                                </tr>
+                                <tr>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow text-center"><strong>Shipping</strong></td>
+                                    <td class="emptyrow text-right">$20</td>
+                                </tr>
+                                <tr>
+                                    <td class="emptyrow"><i class="fa fa-barcode iconbig"></i></td>
+                                    <td class="emptyrow"></td>
+                                    <td class="emptyrow text-center"><strong>Total</strong></td>
+                                    <td class="emptyrow text-right">$978.00</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
-            </div>
-        </div>
-
-        <div class="panel panel-primary setup-content" id="step-2">
-            <div class="panel-heading">
-                 <h3 class="panel-title">Destination</h3>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label">Company Name</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Company Address</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                </div>
-                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
-            </div>
-        </div>
-
-        <div class="panel panel-primary setup-content" id="step-3">
-            <div class="panel-heading">
-                 <h3 class="panel-title">Schedule</h3>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label">Company Name</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Company Address</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                </div>
-                <button class="btn btn-primary nextBtn pull-right" type="button">Next</button>
-            </div>
-        </div>
-
-        <div class="panel panel-primary setup-content" id="step-4">
-            <div class="panel-heading">
-                 <h3 class="panel-title">Cargo</h3>
-            </div>
-            <div class="panel-body">
-                <div class="form-group">
-                    <label class="control-label">Company Name</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Name" />
-                </div>
-                <div class="form-group">
-                    <label class="control-label">Company Address</label>
-                    <input maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Company Address" />
-                </div>
-                <button class="btn btn-success pull-right" type="submit">Finish!</button>
             </div>
         </div>
-    </form>
+    </div>
 </div>
 
 
-<script type="text/javascript">
-$(document).ready(function () {
-
-    var navListItems = $('div.setup-panel div a'),
-        allWells = $('.setup-content'),
-        allNextBtn = $('.nextBtn');
-
-    allWells.hide();
-
-    navListItems.click(function (e) {
-        e.preventDefault();
-        var $target = $($(this).attr('href')),
-            $item = $(this);
-
-        if (!$item.hasClass('disabled')) {
-            navListItems.removeClass('btn-success').addClass('btn-default');
-            $item.addClass('btn-success');
-            allWells.hide();
-            $target.show();
-            $target.find('input:eq(0)').focus();
-        }
-    });
-
-    allNextBtn.click(function () {
-        var curStep = $(this).closest(".setup-content"),
-            curStepBtn = curStep.attr("id"),
-            nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url']"),
-            isValid = true;
-
-        $(".form-group").removeClass("has-error");
-        for (var i = 0; i < curInputs.length; i++) {
-            if (!curInputs[i].validity.valid) {
-                isValid = false;
-                $(curInputs[i]).closest(".form-group").addClass("has-error");
-            }
-        }
-
-        if (isValid) nextStepWizard.removeAttr('disabled').trigger('click');
-    });
-
-    $('div.setup-panel div a.btn-success').trigger('click');
-});
-</script>
 
 
 

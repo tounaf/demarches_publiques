@@ -58,10 +58,10 @@
 <!-- NAVIGATION BAR -->
 <div class="topnav" id="myTopnav">
   <a href="index.php"><i class="fa fa-home"></i></a>
-  <a href="acteDeNaissance.php" class="active">Acte de naissance</a>
+  <a href="acteDeNaissance.php">Acte de naissance</a>
   <a href="casierJudiciaire.php">Extrait casier judiciaire</a>
   <a href="acteDeDeces.php">Acte de décès</a>
-  <a href="acteDeMariage.php">Acte de mariage</a>
+  <a href="acteDeMariage.php" class="active">Acte de mariage</a>
   <a href="actualites.php">Actualités</a>
   <a href="contact.php">Contact</a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -74,8 +74,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h4>FORMULAIRE DE DEMANDE D'ACTE DE NAISSANCE EN LIGNE</h4>
-      <p>Demarches simplifiées pour l'obtention rapide de votre acte de naissance</p>
+      <h4>FORMULAIRE DE DEMANDE D'ACTE DE MARIAGE EN LIGNE</h4>
+      <p>Demarches simplifiées pour l'obtention rapide de votre acte de mariage</p>
     </div>
   </div>
 </div>
@@ -94,7 +94,7 @@
           <h5 class="">1ère ETAPE - RENSEIGNEMENTS SUR L'ACTE</h5>
           <p class="">Veuillez renseigner les champs ci-après pour le traitement de votre demande d'acte de naissance</p>
           <div class="form-group">
-            <label class="">Vous demandez un acte de naissance en tant que (*)</label>
+            <label class="">Vous demandez un acte de mariage en tant que (*)</label>
             <select class="form-control" id="validation01">
               <option>- Choisir votre réponse -</option>
               <option>Titulaire de l’acte</option>
@@ -130,10 +130,29 @@
         <!-- PART2 -->
         <div id="part2" class="box_effect_form" style="display: none">
           <h5 class="">2ème ETAPE - INFORMATIONS SUR L'ACTE</h5>
-          <p class="">Informations sur la personne concernée par l'acte</p>
+          <p class="">Informations sur le mariage</p>
+          <div class="form-group">
+            <label class="">Date du mariage (*)</label>
+            <input class="form-control" type="date" name="" id="validation04">
+          </div>
+          <div class="form-group">
+            <label class="">Ville du mariage (*)</label>
+            <input class="form-control" type="" name="" id="validation05">
+          </div>
+          <div class="form-group">
+            <label class="">Code postal du ville du mariage (*)</label>
+            <input class="form-control" type="" name="" id="validation06">
+          </div>
+          <div class="form-group">
+            <label class="">Pays du mariage (*)</label>
+            <input class="form-control" type="" name="" id="validation07">
+          </div>
+
+          <h5 class="">Informations sur le 1er conjoint</h5>
+          <hr>
           <div class="form-group">
             <label class="">Civilité (*)</label>
-            <select class="form-control" id="validation04">
+            <select class="form-control" id="validation08">
               <option>- Choisir votre réponse -</option>
               <option>Monsieur</option>
               <option>Madame</option>
@@ -141,94 +160,157 @@
           </div>
           <div class="form-group">
             <label class="">Nom de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation05">
-          </div>
-          <div class="form-group">
-            <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation06">
-          </div>
-          <div class="form-group">
-            <label class="">Date de naissance (*)</label>
-            <input class="form-control" type="date" name="" id="validation07">
-          </div>
-          <div class="form-group">
-            <label class="">Ville de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation08">
-          </div>
-          <div class="form-group">
-            <label class="">Code postal de naissance (*)</label>
             <input class="form-control" type="" name="" id="validation09">
           </div>
           <div class="form-group">
-            <label class="">Pays de naissance (*)</label>
+            <label class="">Prénoms (*)</label>
             <input class="form-control" type="" name="" id="validation10">
           </div>
+          <div class="form-group">
+            <label class="">Date de naissance (*)</label>
+            <input class="form-control" type="date" name="" id="validation11">
+          </div>
+          <div class="form-group">
+            <label class="">Ville de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation12">
+          </div>
+          <div class="form-group">
+            <label class="">Code postal de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation13">
+          </div>
+          <div class="form-group">
+            <label class="">Pays de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation14">
+          </div>
+          <div class="form-group">
+            <label class="">Nationalité (*)</label>
+            <input class="form-control" type="" name="" id="validation15">
+          </div>
 
-          <hr>
-          <h5 class="">Informations sur les parents de la personnes concernée par l'acte</h5>
+          <h5 class="">Informations sur les parents du 1er conjoint</h5>
           <p>Filiation paternelle</p>
           <div class="form-group">
             <label class="">Nom de naissance du père (*)</label>
-            <input class="form-control" type="" name="" id="validation11">
+            <input class="form-control" type="" name="" id="validation16">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation12">
+            <input class="form-control" type="" name="" id="validation17">
+          </div>
+          <p>Filiation paternelle</p>
+          <div class="form-group">
+            <label class="">Nom de naissance de la mère (*)</label>
+            <input class="form-control" type="" name="" id="validation18">
+          </div>
+          <div class="form-group">
+            <label class="">Prénoms (*)</label>
+            <input class="form-control" type="" name="" id="validation19">
+          </div>
+
+          <h5 class="">Informations sur le 2nd conjoint</h5>
+          <hr>
+          <div class="form-group">
+            <label class="">Civilité (*)</label>
+            <select class="form-control" id="validation20">
+              <option>- Choisir votre réponse -</option>
+              <option>Monsieur</option>
+              <option>Madame</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="">Nom de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation21">
+          </div>
+          <div class="form-group">
+            <label class="">Prénoms (*)</label>
+            <input class="form-control" type="" name="" id="validation22">
+          </div>
+          <div class="form-group">
+            <label class="">Date de naissance (*)</label>
+            <input class="form-control" type="date" name="" id="validation23">
+          </div>
+          <div class="form-group">
+            <label class="">Ville de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation24">
+          </div>
+          <div class="form-group">
+            <label class="">Code postal de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation25">
+          </div>
+          <div class="form-group">
+            <label class="">Pays de naissance (*)</label>
+            <input class="form-control" type="" name="" id="validation26">
+          </div>
+          <div class="form-group">
+            <label class="">Nationalité (*)</label>
+            <input class="form-control" type="" name="" id="validation27">
+          </div>
+
+          <h5>Informations sur les parents du 2nd conjoint</h5>
+          <p>Filiation paternelle</p>
+          <div class="form-group">
+            <label class="">Nom de naissance du père (*)</label>
+            <input class="form-control" type="" name="" id="validation28">
+          </div>
+          <div class="form-group">
+            <label class="">Prénoms (*)</label>
+            <input class="form-control" type="" name="" id="validation29">
           </div>
           <p>Filiation maternelle</p>
           <div class="form-group">
             <label class="">Nom de naissance de la mère (*)</label>
-            <input class="form-control" type="" name="" id="validation13">
+            <input class="form-control" type="" name="" id="validation30">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation14">
+            <input class="form-control" type="" name="" id="validation31">
           </div>
 
           <hr>
-          <h5 class="">Adresse de réception de l'acte</h5>
+          <h5>Adresse de réception de l'acte</h5>
           <p>Où désirez-vous recevoir l'acte?</p>
           <div class="form-group">
             <label class="">Nom d'usage (*)</label>
-            <input class="form-control" type="" name="" id="validation15">
+            <input class="form-control" type="" name="" id="validation32">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation16">
+            <input class="form-control" type="" name="" id="validation33">
           </div>
           <div class="form-group">
             <label class="">Adresse (*)</label>
-            <input class="form-control" type="" name="" id="validation17">
+            <input class="form-control" type="" name="" id="validation34">
           </div>
           <div class="form-group">
             <label class="">Code postal (*)</label>
-            <input class="form-control" type="" name="" id="validation18">
+            <input class="form-control" type="" name="" id="validation35">
           </div>
           <div class="form-group">
             <label class="">Ville (*)</label>
-            <input class="form-control" type="" name="" id="validation19">
+            <input class="form-control" type="" name="" id="validation36">
           </div>
           <div class="form-group">
             <label class="">Pays (*)</label>
-            <input class="form-control" type="" name="" id="validation20">
+            <input class="form-control" type="" name="" id="validation37">
           </div>
           <div class="form-group">
             <label class="">Adresse e-mail (*)</label>
-            <input class="form-control" type="" name="" id="validation21">
+            <input class="form-control" type="" name="" id="validation38">
           </div>
           <div class="form-group">
             <label class="">Téléphone (*)</label>
-            <input class="form-control" type="" name="" id="validation22">
+            <input class="form-control" type="" name="" id="validation39">
           </div>
+
 
           <hr>
           <h5 class="">Finalisation de la demande - Frais administratifs</h5>
-          <p class="">Finalisez votre demande et obtenez votre document par courrier postal le plus tôt possible. </p>
+          <p class="">Finalisez votre demande et obtenez votre document par courrier postal le plus tôt possible.</p>
           <p>Les frais de traitements de nos services vous permettent d'obtenir votre  sans le moindre déplacement de votre part.</p>
-          <p>Ses frais s'élèvent à 29,90€ et comprennent le traitement complet de votre dossier dont l'impression de votre demande, les vérifications, l'enregistrement et le suivi de votre dossier. </p>
+          <p>Ses frais s'élèvent à 29,90€ et comprennent le traitement complet de votre dossier dont l'impression de votre demande, les vérifications, l'enregistrement et le suivi de votre dossier.</p>
           <div class="form-group">
             <input class="" type="checkbox" name="" id="condition_un" required>
-            <label class="label_inline" id="obligationOne">Je demande l'exécution immédiate du traitement de ma demande et renonce ainsi expressément à mon droit de rétractation pour que la prestation commence avant l'échéance du délai légal de retractation </label>
+            <label class="label_inline" id="obligationOne">Je demande l'exécution immédiate du traitement de ma demande et renonce ainsi expressément à mon droit de rétractation pour que la prestation commence avant l'échéance du délai légal de retractation.</label>
           </div>
           <div class="form-group">
             <input class="" type="checkbox" name="" id="condition_deux" required>
@@ -305,7 +387,7 @@
 </script>
 
   <!-- SCRIPTS -->
-  <script src="assets/js/form.js"></script>
+  <script src="assets/js/form_mariage.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/sweetalert2.all.js"></script>

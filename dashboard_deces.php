@@ -45,10 +45,10 @@
 <!-- NAVIGATION BAR -->
 <div class="topnav" id="myTopnav">
   <a href=""><i class="fa fa-home"></i></a>
-  <a href="dashboard_articles.php" class="active">Gestion - Actualités</a>
+  <a href="dashboard_articles.php">Gestion - Actualités</a>
   <a href="dashboard_naissance.php">Gestion - Acte de naissance</a>
   <a href="dashboard_casier.php">Gestion - Extrait casier judiciaire</a>
-  <a href="dashboard_deces.php">Gestion - Acte de décès</a>
+  <a href="dashboard_deces.php" class="active">Gestion - Acte de décès</a>
   <a href="dashboard_mariage.php">Gestion - Acte de mariage</a>
   <a href="login.html"><i class="fa fa-power-off"> Déconnexion</i></a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
@@ -64,30 +64,32 @@
       <div class="col-md-12 col-lg-12">
         <section id="">
           <div class="container">
-            <h2 class="pb-3">Gestion des actualités </h2>
+            <h2 class="pb-3">Gestion des actes de décès </h2>
             <table id="table_id" class="display table-striped table table-bordered dt-responsive">
                 <thead>
                   <tr>
-                    <th style="width:80%;">Titres</th>
-                    <th style="width:20%;">Actions</th>
+                    <th style="">Nom de naissance</th>
+                    <th style="">Prénoms</th>
+                    <th style="">Adresse e-mail</th>
+                    <th style="">Téléphone</th>
+                    <th style="">Actions</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
                     <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
                     <td>
                       <center>
+                      	<button class="btn btn-info"><i class="fa fa-eye"></i></button>
                         <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
-                        <!-- <button class="btn btn-info"><i class="fa fa-edit"></i></button> -->
-                        <a href="traitement/article_creation.php" class="btn btn-success"><i class="fa fa-plus"></i></a>
                       </center>
                     </td>
                   </tr>
                 </tbody>
             </table>
-            <!-- Ajout -->
-            <a href="traitement/article_creation.php" class="btn btn-success"><i class="fa fa-plus"></i> Ajouter un article</a>
-            <!-- Ajout -->
           </div>
         </section>
       </div>
