@@ -18,6 +18,11 @@
   <!-- Fonticons -->
   <link rel="stylesheet" type="text/css" href="../assets/fonticons/css/font-awesome.css">
   <link rel="stylesheet" type="text/css" href="../assets/fonticons/css/font-awesome.min.css">
+
+  <!-- SweatAlert  -->
+  <script src="../assets/js/sweetalert2.all.js"></script>
+  <script src="../assets/js/sweetalert2.all.min.js"></script>
+
 </head>
 <body>
 
@@ -29,45 +34,95 @@ if(
   isset($_POST["titre"])
   && isset($_FILES["file"])
   && isset($_POST["contenu"])
+  && isset($_POST["date"])
   )
 
   $chemin = "upload/";
   $chemin = $chemin . basename( $_FILES['file']['name']);
   $titre = addslashes(trim($_POST["titre"]));
   $contenu = addslashes(trim($_POST["contenu"]));
+  $date = trim($_POST["date"]);
 
 
-
-$sql ="INSERT INTO article(titre_art, image_art, contenu_art) VALUES ('$titre', '$chemin', '$contenu')";
+$sql ="INSERT INTO article(titre_art, image_art, contenu_art, date_pub_art) VALUES ('$titre', '$chemin', '$contenu', '$date')";
 
 
 if (mysqli_query($conn, $sql)) {
-  if(move_uploaded_file($_FILES['file']['tmp_name'], $chemin)){
-      echo "
-        <script type='text/javascript'>
-          swal('Un nouveau article a été ajouté', '', 'success');
-        </script>";
-      header("location:../dashboard_articles.php");
+    if(move_uploaded_file($_FILES['file']['tmp_name'], $chemin)){
+      echo "<script type='text/javascript'>
+       Swal.fire(
+      'Article ajouté !',
+      'Veuillez cliquer sur le boutton ci-dessous !',
+      'success'
+    );
+    var btnSwalls = document.getElementsByClassName('swal2-confirm');
+            for(var i = 0; i<btnSwalls.length; i++)
+            {
+              btnSwalls[i].addEventListener('click', function(e){
+                e.preventDefault();
+                window.location = '../dashboard_articles.php';
+                })
+            }
+    </script>";
+   } else {
+    echo "<script type='text/javascript'>
+       Swal.fire(
+      'Oops...Une erreur s'est produite !',
+      'Veuillez entrer à nouveau les informations',
+      'error'
+    );
+    var btnSwalls = document.getElementsByClassName('swal2-confirm');
+            for(var i = 0; i<btnSwalls.length; i++)
+            {
+              btnSwalls[i].addEventListener('click', function(e){
+                e.preventDefault();
+                window.location = 'article_creation.php';
+                })
+            }
+    </script>";
    }
 
-  else {
-    echo "
-        <script type='text/javascript'>
-          swal('Une erreur s'est produite, 'Veuillez entrer à nouveau les informations', 'error');
-        </script>";
-      header("location:article_insert.php");
-  }
+   echo "<script type='text/javascript'>
+       Swal.fire(
+      'Article ajouté !',
+      'Veuillez cliquer sur le boutton ci-dessous !',
+      'success'
+    );
+    var btnSwalls = document.getElementsByClassName('swal2-confirm');
+            for(var i = 0; i<btnSwalls.length; i++)
+            {
+              btnSwalls[i].addEventListener('click', function(e){
+                e.preventDefault();
+                window.location = '../dashboard_articles.php';
+                })
+            }
+    </script>";
+
 } else {
-    echo "
-        <script type='text/javascript'>
-          swal('Une erreur s'est produite, 'Veuillez entrer à nouveau les informations', 'error');
-        </script>";
-      header("location:article_insert.php");
+    echo "<script type='text/javascript'>
+       Swal.fire(
+      'Oops...Une erreur s'est produite !',
+      'Veuillez entrer à nouveau les informations',
+      'error'
+    );
+    var btnSwalls = document.getElementsByClassName('swal2-confirm');
+            for(var i = 0; i<btnSwalls.length; i++)
+            {
+              btnSwalls[i].addEventListener('click', function(e){
+                e.preventDefault();
+                window.location = 'article_creation.php';
+                })
+            }
+    </script>";
 }
 
 mysqli_close($conn);
 
  ?>
+
+<!-- SCRIPTS -->
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/jquery.min.js"></script>
 
 
 </body>

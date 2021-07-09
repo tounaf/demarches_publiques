@@ -1,3 +1,23 @@
+<?php
+session_start();
+if(isset($_SESSION['user']))
+{
+
+include('connexion/connexion.php');
+
+// 10 mins in seconds
+$inactive = 300;
+if( !isset($_SESSION['timeout']) )
+$_SESSION['timeout'] = time() + $inactive;
+
+$session_life = time() - $_SESSION['timeout'];
+
+if($session_life > $inactive)
+{  session_destroy(); header("location:login.html");     }
+
+$_SESSION['timeout']=time();
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -50,7 +70,7 @@
   <a href="dashboard_casier.php">Gestion - Extrait casier judiciaire</a>
   <a href="dashboard_deces.php">Gestion - Acte de décès</a>
   <a href="dashboard_mariage.php">Gestion - Acte de mariage</a>
-  <a href="login.html"><i class="fa fa-power-off"> Déconnexion</i></a>
+  <a href="traitement/session_destroy.php"><i class="fa fa-power-off"> Déconnexion</i></a>
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
     <i class="fa fa-bars"></i>
   </a>
@@ -76,11 +96,21 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <?php
+                    $sql = "SELECT * FROM acteDeNaissance ORDER BY id_naissance ASC";
+
+                    $resultat = mysqli_query($conn, $sql);
+
+                    if($resultat){
+                      if(mysqli_num_rows($resultat)>0){
+                        while ($row = mysqli_fetch_assoc($resultat)){
+
+                  ?>
+                  <tr data-id="<?php echo $row['id_naissance']; ?>">
+                    <td><?php echo $row['nom_naissance']; ?></td>
+                    <td><?php echo $row['prenom']; ?></td>
+                    <td><?php echo $row['email_acte']; ?></td>
+                    <td><?php echo $row['telephone_acte']; ?></td>
                     <td>
                       <center>
                       	<button class="btn btn-info"><i class="fa fa-eye"></i></button>
@@ -89,6 +119,11 @@
                     </td>
                   </tr>
                 </tbody>
+                <?php
+                      }
+                    }
+                  }
+                ?>
             </table>
           </div>
         </section>
@@ -120,3 +155,10 @@
 
 </body>
 </html>
+<?php
+}
+else{
+    header("location:login.html");
+}
+
+?>

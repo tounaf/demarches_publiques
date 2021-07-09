@@ -88,7 +88,7 @@
 
       <div id="section1">
 
-      <form method="post" action="">
+      <form method="post" action="traitement/acteDeDeces_insert.php">
         <!-- PARTIE 1 -->
         <div id="part1" class="box_effect_form">
           <h5 class="">1ère ETAPE - RENSEIGNEMENTS SUR L'ACTE</h5>

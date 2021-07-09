@@ -1,4 +1,5 @@
 <?php
+  $id = $_GET['id'];
   include('connexion/connexion.php');
 ?>
 <!DOCTYPE html>
@@ -79,7 +80,7 @@
   width: 100%;
 }
 .article-info {
-  position: absolute;
+  /*position: absolute;*/
   background: #72ccd4;
   padding: 15px 45px;
   border-radius: 50px;
@@ -103,6 +104,12 @@ a {
 a:hover {
   color: black;
   text-decoration: none;
+}
+
+.separator {
+  width: 60px;
+  height: 3px;
+  background-color: #46606c;
 }
 
 </style>
@@ -188,69 +195,33 @@ a:hover {
           </div>
           <div class="col-md-12 col-lg-9">
             <section id="post">
-                  <?php
-                    $sql = "SELECT * FROM article";
-                    $resultat = mysqli_query($conn, $sql);
-                    $total_ligne = mysqli_num_rows($resultat);
-                    if(isset($_GET["debut"]))
-                    {
-                      $commencement = $_GET["debut"];
-                      $nbliste = 3;
-                    }
-                    else
-                    {
-                      $commencement = 0;
-                      $nbliste = 3;
-                    }
-
-                    $nb_page = ceil($total_ligne/$nbliste);
-                    $sql = "SELECT * FROM article ORDER BY id DESC LIMIT  $commencement, $nbliste";
-                    $result = mysqli_query($conn, $sql);
-                    if ($result->num_rows > 0) {
-                    while($row = $result->fetch_assoc()) {
-                  ?>
-                    <div class="post-content">
-                      <div class="row">
-                        <div class="col-md-4 col-sm-12">
-                          <div class="post-image">
-                            <img src="<?php echo $row['image_art'] ?>">
-                          </div>
-                        </div>
-                        <div class="col-md-8 col-sm-12">
-                          <div class="post-detail">
-                            <h4><?php echo $row['titre_art']; ?></h4>
-                            <p>
-                              <?php echo(substr($row['contenu_art'],0,210).'...'); ?>
-                            </p>
-                            <a href="actualites_voir.php?id=<?php echo $row['id']; ?>">
-                              <div class="post-btn">
-                                <button class="btn btn-post float-right">En savoir plus</button>
-                              </div>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
+              <div class="container">
+                <?php
+                  $sql = "SELECT * FROM article WHERE id = $id";
+                  $result = $conn->query($sql);
+                  $row = $result->fetch_assoc();
+                 ?>
+                <h2 class="title text-center"><?php echo $row['titre_art']; ?></h2>
+                <hr class="separator">
+                <div class="text-center">
+                  <div class="article-img wow zoomIn">
+                  <center>
+                    <img src="<?php echo $row['image_art'] ?>">
+                  </center>
+                    <div class="article-info">
+                      <center>
+                        <span><i class="fa fa-calendar"></i>&nbsp;&nbsp;<?php echo $row['date_pub_art']; ?></span>
+                      </center>
                     </div>
+                  </div>
+                  <div class="article-content">
+                    <p class="wow fadeInUp text-justify">
+                      <?php echo $row['contenu_art']; ?>
+                    </p>
+                  </div>
+                </div>
 
-                    <?php
-                        }
-                      }
-                      ?>
-
-                   <div class="container">
-                    <ul class="pagination">
-                      <?php
-                    for($i = 0; $i<$nb_page; $i++){
-                      $k = $i * $nbliste;
-                      $p = $i+1;
-
-                      ?>
-                      <li class="page-item"><a class="page-link"  href="actualites.php?debut=<?php echo $k  ?>"><?php echo $p; ?></a></li>
-
-                  <?php } ?>
-
-                     </ul>
-                   </div>
+              </div>
             </section>
           </div>
         </div>

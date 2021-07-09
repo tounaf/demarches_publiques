@@ -75,10 +75,15 @@
                     <input type="text" class="form-control" name="titre" placeholder="Titre de l'article">
                 </div>
                 <div class="form-group">
+                    <!-- <input type="hidden" name="MAX_FILE_SIZE" value="30000" /> -->
                     <input type="file" class="form-control pb-2" name="file">
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" rows="5" name="contenu" placeholder="Rédigez votre article ici..."></textarea>
+                </div>
+                <div class="form-group">
+                    <p style="text-align: left;">Date de publication</p>
+                    <input class="form-control" type="date" name="date">
                 </div>
                 <div>
                   <input type="submit" class="voir_actualites" value="Ajouter un article">

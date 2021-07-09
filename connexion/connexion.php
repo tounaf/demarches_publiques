@@ -1,13 +1,14 @@
 <?php
+
 	$servername = "localhost";
 	$username = "root";
 	$password = "";
- $dbname = "demarches_publiques";
+  $dbname = "demarches_publiques";
 
-	try {
-	  $conn = new PDO("mysql:host=$servername;dbname=demarches_publiques", $username, $password);
-	  // set the PDO error mode to exception
-	  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	} catch(PDOException $e) {
-	}
+  // Create connection
+  $conn = mysqli_connect($servername, $username, $password, $dbname);
+  if (!$conn) {
+      die("Erreur de connexion: " . mysqli_connect_error());
+  }
+
 ?>

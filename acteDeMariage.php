@@ -95,7 +95,7 @@
           <p class="">Veuillez renseigner les champs ci-après pour le traitement de votre demande d'acte de naissance</p>
           <div class="form-group">
             <label class="">Vous demandez un acte de mariage en tant que (*)</label>
-            <select class="form-control" id="validation01">
+            <select class="form-control" id="validation01" name="acte_en_tant_que">
               <option>- Choisir votre réponse -</option>
               <option>Titulaire de l’acte</option>
               <option>Son père - Sa mère</option>
@@ -108,7 +108,7 @@
           </div>
           <div class="form-group">
             <label class="">Quel type d'acte désirez-vous obtenir? (*)</label>
-            <select class="form-control" id="validation02">
+            <select class="form-control" id="validation02" name="type_acte">
               <option>- Choisir votre réponse -</option>
               <option>Copie intégrale de l’acte</option>
               <option>Extrait avec filiation</option>
@@ -118,7 +118,7 @@
           </div>
           <div class="form-group">
             <label class="">Nombre de copies souhaitées (*)</label>
-            <select class="form-control" id="validation03">
+            <select class="form-control" id="validation03" name="nb_copie">
               <option>- Choisir votre réponse -</option>
               <option>1</option>
               <option>2</option>
@@ -133,7 +133,7 @@
           <p class="">Informations sur le mariage</p>
           <div class="form-group">
             <label class="">Date du mariage (*)</label>
-            <input class="form-control" type="date" name="" id="validation04">
+            <input class="form-control" type="date" name="" id="validation04" name="date_mariage">
           </div>
           <div class="form-group">
             <label class="">Ville du mariage (*)</label>
