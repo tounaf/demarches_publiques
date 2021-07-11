@@ -88,7 +88,7 @@
 
       <div id="section1">
 
-      <form method="post" action="">
+      <form method="post" action="traitement/acteDeMariage_insert.php">
         <!-- PARTIE 1 -->
         <div id="part1" class="box_effect_form">
           <h5 class="">1ère ETAPE - RENSEIGNEMENTS SUR L'ACTE</h5>
@@ -133,26 +133,26 @@
           <p class="">Informations sur le mariage</p>
           <div class="form-group">
             <label class="">Date du mariage (*)</label>
-            <input class="form-control" type="date" name="" id="validation04" name="date_mariage">
+            <input class="form-control" type="date" id="validation04" name="date_mariage">
           </div>
           <div class="form-group">
             <label class="">Ville du mariage (*)</label>
-            <input class="form-control" type="" name="" id="validation05">
+            <input class="form-control" type="" name="ville_mariage" id="validation05">
           </div>
           <div class="form-group">
             <label class="">Code postal du ville du mariage (*)</label>
-            <input class="form-control" type="" name="" id="validation06">
+            <input class="form-control" type="" name="code_postal_mariage" id="validation06">
           </div>
           <div class="form-group">
             <label class="">Pays du mariage (*)</label>
-            <input class="form-control" type="" name="" id="validation07">
+            <input class="form-control" type="" name="pays_mariage" id="validation07">
           </div>
 
           <h5 class="">Informations sur le 1er conjoint</h5>
           <hr>
           <div class="form-group">
             <label class="">Civilité (*)</label>
-            <select class="form-control" id="validation08">
+            <select class="form-control" id="validation08" name="civilite">
               <option>- Choisir votre réponse -</option>
               <option>Monsieur</option>
               <option>Madame</option>
@@ -160,51 +160,51 @@
           </div>
           <div class="form-group">
             <label class="">Nom de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation09">
+            <input class="form-control" type="" name="nom_naissance" id="validation09">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation10">
+            <input class="form-control" type="" name="prenom_naissance" id="validation10">
           </div>
           <div class="form-group">
             <label class="">Date de naissance (*)</label>
-            <input class="form-control" type="date" name="" id="validation11">
+            <input class="form-control" type="date" name="date_naissance" id="validation11">
           </div>
           <div class="form-group">
             <label class="">Ville de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation12">
+            <input class="form-control" type="" name="ville_naissance" id="validation12">
           </div>
           <div class="form-group">
             <label class="">Code postal de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation13">
+            <input class="form-control" type="" name="code_postal_naissance" id="validation13">
           </div>
           <div class="form-group">
             <label class="">Pays de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation14">
+            <input class="form-control" type="" name="pays_naissance" id="validation14">
           </div>
           <div class="form-group">
             <label class="">Nationalité (*)</label>
-            <input class="form-control" type="" name="" id="validation15">
+            <input class="form-control" type="" name="nationalite" id="validation15">
           </div>
 
           <h5 class="">Informations sur les parents du 1er conjoint</h5>
           <p>Filiation paternelle</p>
           <div class="form-group">
             <label class="">Nom de naissance du père (*)</label>
-            <input class="form-control" type="" name="" id="validation16">
+            <input class="form-control" type="" name="nom_naissance_pere" id="validation16">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation17">
+            <input class="form-control" type="" name="prenom_pere" id="validation17">
           </div>
           <p>Filiation paternelle</p>
           <div class="form-group">
             <label class="">Nom de naissance de la mère (*)</label>
-            <input class="form-control" type="" name="" id="validation18">
+            <input class="form-control" type="" name="nom_naissance_mere" id="validation18">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation19">
+            <input class="form-control" type="" name="prenom_mere" id="validation19">
           </div>
 
           <h5 class="">Informations sur le 2nd conjoint</h5>
@@ -219,51 +219,51 @@
           </div>
           <div class="form-group">
             <label class="">Nom de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation21">
+            <input class="form-control" type="" name="nom_naissance_deux" id="validation21">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation22">
+            <input class="form-control" type="" name="prenom_deux" id="validation22">
           </div>
           <div class="form-group">
             <label class="">Date de naissance (*)</label>
-            <input class="form-control" type="date" name="" id="validation23">
+            <input class="form-control" type="date" name="date_naissance_deux" id="validation23">
           </div>
           <div class="form-group">
             <label class="">Ville de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation24">
+            <input class="form-control" type="" name="ville_naissance_deux" id="validation24">
           </div>
           <div class="form-group">
             <label class="">Code postal de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation25">
+            <input class="form-control" type="" name="code_postal_naissance_deux" id="validation25">
           </div>
           <div class="form-group">
             <label class="">Pays de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation26">
+            <input class="form-control" type="" name="pays_naissance_deux" id="validation26">
           </div>
           <div class="form-group">
             <label class="">Nationalité (*)</label>
-            <input class="form-control" type="" name="" id="validation27">
+            <input class="form-control" type="" name="nationalite_deux" id="validation27">
           </div>
 
           <h5>Informations sur les parents du 2nd conjoint</h5>
           <p>Filiation paternelle</p>
           <div class="form-group">
             <label class="">Nom de naissance du père (*)</label>
-            <input class="form-control" type="" name="" id="validation28">
+            <input class="form-control" type="" name="nom_naissance_pere_deux" id="validation28">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation29">
+            <input class="form-control" type="" name="prenom_pere_deux" id="validation29">
           </div>
           <p>Filiation maternelle</p>
           <div class="form-group">
             <label class="">Nom de naissance de la mère (*)</label>
-            <input class="form-control" type="" name="" id="validation30">
+            <input class="form-control" type="" name="nom_naissance_mere_deux" id="validation30">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation31">
+            <input class="form-control" type="" name="prenom_mere_deux" id="validation31">
           </div>
 
           <hr>
@@ -271,35 +271,35 @@
           <p>Où désirez-vous recevoir l'acte?</p>
           <div class="form-group">
             <label class="">Nom d'usage (*)</label>
-            <input class="form-control" type="" name="" id="validation32">
+            <input class="form-control" type="" name="nom_usage" id="validation32">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation33">
+            <input class="form-control" type="" name="prenom_acte" id="validation33">
           </div>
           <div class="form-group">
             <label class="">Adresse (*)</label>
-            <input class="form-control" type="" name="" id="validation34">
+            <input class="form-control" type="" name="adresse_acte" id="validation34">
           </div>
           <div class="form-group">
             <label class="">Code postal (*)</label>
-            <input class="form-control" type="" name="" id="validation35">
+            <input class="form-control" type="" name="code_postal_acte" id="validation35">
           </div>
           <div class="form-group">
             <label class="">Ville (*)</label>
-            <input class="form-control" type="" name="" id="validation36">
+            <input class="form-control" type="" name="ville_acte" id="validation36">
           </div>
           <div class="form-group">
             <label class="">Pays (*)</label>
-            <input class="form-control" type="" name="" id="validation37">
+            <input class="form-control" type="" name="pays_acte" id="validation37">
           </div>
           <div class="form-group">
             <label class="">Adresse e-mail (*)</label>
-            <input class="form-control" type="" name="" id="validation38">
+            <input class="form-control" type="" name="email_acte" id="validation38">
           </div>
           <div class="form-group">
             <label class="">Téléphone (*)</label>
-            <input class="form-control" type="" name="" id="validation39">
+            <input class="form-control" type="" name="telephone" id="validation39">
           </div>
 
 
@@ -309,11 +309,11 @@
           <p>Les frais de traitements de nos services vous permettent d'obtenir votre  sans le moindre déplacement de votre part.</p>
           <p>Ses frais s'élèvent à 29,90€ et comprennent le traitement complet de votre dossier dont l'impression de votre demande, les vérifications, l'enregistrement et le suivi de votre dossier.</p>
           <div class="form-group">
-            <input class="" type="checkbox" name="" id="condition_un" required>
+            <input value="false" class="" name="demande_immediat" class="" type="checkbox" id="condition_un" required>
             <label class="label_inline" id="obligationOne">Je demande l'exécution immédiate du traitement de ma demande et renonce ainsi expressément à mon droit de rétractation pour que la prestation commence avant l'échéance du délai légal de retractation.</label>
           </div>
           <div class="form-group">
-            <input class="" type="checkbox" name="" id="condition_deux" required>
+            <input value="false" name="accept_condition_generale" class="" type="checkbox" id="condition_deux" required>
             <label class="label_inline" id="obligationTwo">J’accepte les conditions générales d’utilisation et je certifie sur l’honneur l’exactitude des informations fournies. Il est rappelé que toute personne procédant à une fausse déclaration pour elle-même ou pour autrui peut s’exposer aux sanctions prévues aux articles 441-1 du code pénal et suivants.</label>
           </div>
           <button class="btn btn-success button_right" id="finaliseApplication">FINALISER LA DEMANDE</button>

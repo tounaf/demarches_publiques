@@ -41,10 +41,9 @@ if(
   && isset($_POST["ville_naissance"])
   && isset($_POST["code_postal_naissance"])
   && isset($_POST["pays_naissance"])
-  && isset($_POST["nom_naissance_pere"])
-  && isset($_POST["prenom_pere"])
-  && isset($_POST["nom_naissance_mere"])
-  && isset($_POST["prenom_mere"])
+  && isset($_POST["information_deces"])
+  && isset($_POST["ville_deces"])
+  && isset($_POST["pays_deces"])
   && isset($_POST["nom_usage"])
   && isset($_POST["prenom_acte"])
   && isset($_POST["adresse_acte"])
@@ -67,7 +66,7 @@ if(
     $accept_condition_generale = "false";
   }
 
-  // Table acteDeNaissance
+  // Table actededeces
   $acte_en_tant_que = $_POST["acte_en_tant_que"];
   $type_acte = $_POST["type_acte"];
   $nb_copie = $_POST["nb_copie"];
@@ -78,10 +77,9 @@ if(
   $ville_naissance = $_POST["ville_naissance"];
   $code_postal_naissance = $_POST["code_postal_naissance"];
   $pays_naissance = $_POST["pays_naissance"];
-  $nom_naissance_pere = $_POST["nom_naissance_pere"];
-  $prenom_pere = $_POST["prenom_pere"];
-  $nom_naissance_mere = $_POST["nom_naissance_mere"];
-  $prenom_mere = $_POST["prenom_mere"];
+  $information_deces = $_POST["information_deces"];
+  $ville_deces = $_POST["ville_deces"];
+  $pays_deces = $_POST["pays_deces"];
   $nom_usage = $_POST["nom_usage"];
   $prenom_acte = $_POST["prenom_acte"];
   $adresse_acte = $_POST["adresse_acte"];
@@ -92,7 +90,7 @@ if(
   $telephone_acte = $_POST["telephone_acte"];
 
 
-$sql ="INSERT INTO acteDeNaissance (acte_en_tant_que, type_acte, nb_copie, civilite, nom_naissance, prenom, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone_acte) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$civilite', '$nom_naissance', '$prenom', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone_acte')";
+$sql ="INSERT INTO actededeces (acte_en_tant_que, type_acte, nb_copie, civilite, nom_naissance, prenom, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, information_deces, ville_deces, pays_deces, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone_acte) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$civilite', '$nom_naissance', '$prenom', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$information_deces', '$ville_deces', '$pays_deces', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone_acte')";
 
 
 if (mysqli_query($conn, $sql)) {

@@ -231,7 +231,7 @@
             <label class="label_inline" id="obligationOne">Je demande l'exécution immédiate du traitement de ma demande et renonce ainsi expressément à mon droit de rétractation pour que la prestation commence avant l'échéance du délai légal de retractation </label>
           </div>
           <div class="form-group">
-            <input value="false" name="accept_condition_generale" class="" type="checkbox" name="" id="condition_deux" required>
+            <input value="false" name="accept_condition_generale" class="" type="checkbox" id="condition_deux" required>
             <label class="label_inline" id="obligationTwo">J’accepte les conditions générales d’utilisation et je certifie sur l’honneur l’exactitude des informations fournies. Il est rappelé que toute personne procédant à une fausse déclaration pour elle-même ou pour autrui peut s’exposer aux sanctions prévues aux articles 441-1 du code pénal et suivants.</label>
           </div>
           <button class="btn btn-success button_right" id="finaliseApplication">FINALISER LA DEMANDE</button>

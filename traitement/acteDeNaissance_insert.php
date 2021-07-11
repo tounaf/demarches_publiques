@@ -92,7 +92,7 @@ if(
   $telephone_acte = $_POST["telephone_acte"];
 
 
-$sql ="INSERT INTO acteDeNaissance (acte_en_tant_que, type_acte, nb_copie, civilite, nom_naissance, prenom, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone_acte) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$civilite', '$nom_naissance', '$prenom', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone_acte')";
+$sql ="INSERT INTO actedenaissance (acte_en_tant_que, type_acte, nb_copie, civilite, nom_naissance, prenom, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone_acte) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$civilite', '$nom_naissance', '$prenom', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone_acte')";
 
 
 if (mysqli_query($conn, $sql)) {

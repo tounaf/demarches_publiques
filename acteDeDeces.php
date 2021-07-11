@@ -95,7 +95,7 @@
           <p class="">Veuillez renseigner les champs ci-après pour le traitement de votre demande d'acte de décès</p>
           <div class="form-group">
             <label class="">Vous demandez un acte de décès en tant que (*)</label>
-            <select class="form-control" id="validation01">
+            <select class="form-control" id="validation01" name="acte_en_tant_que">
               <option>- Choisir votre réponse -</option>
               <option>Son père - Sa mère</option>
               <option>Son époux- Son épouse</option>
@@ -107,7 +107,7 @@
           </div>
           <div class="form-group">
             <label class="">Quel type d'acte désirez-vous obtenir? (*)</label>
-            <select class="form-control" id="validation02">
+            <select class="form-control" id="validation02" name="type_acte">
               <option>- Choisir votre réponse -</option>
               <option>Copie intégrale de l’acte</option>
               <option>Extrait plurilingue</option>
@@ -115,7 +115,7 @@
           </div>
           <div class="form-group">
             <label class="">Nombre de copies souhaitées (*)</label>
-            <select class="form-control" id="validation03">
+            <select class="form-control" id="validation03" name="nb_copie">
               <option>- Choisir votre réponse -</option>
               <option>1</option>
               <option>2</option>
@@ -130,7 +130,7 @@
           <p class="">Informations sur la personne concernée par l'acte</p>
           <div class="form-group">
             <label class="">Civilité (*)</label>
-            <select class="form-control" id="validation04">
+            <select class="form-control" id="validation04" name="civilite">
               <option>- Choisir votre réponse -</option>
               <option>Monsieur</option>
               <option>Madame</option>
@@ -138,41 +138,41 @@
           </div>
           <div class="form-group">
             <label class="">Nom de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation05">
+            <input class="form-control" type="" id="validation05" name="nom_naissance">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation06">
+            <input class="form-control" type="" id="validation06" name="prenom">
           </div>
           <div class="form-group">
             <label class="">Date de naissance (*)</label>
-            <input class="form-control" type="date" name="" id="validation07">
+            <input class="form-control" type="date" id="validation07" name="date_naissance">
           </div>
           <div class="form-group">
             <label class="">Ville de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation08">
+            <input class="form-control" type="" id="validation08" name="ville_naissance">
           </div>
           <div class="form-group">
             <label class="">Code postal de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation09">
+            <input class="form-control" type="" id="validation09" name="code_postal_naissance">
           </div>
           <div class="form-group">
             <label class="">Pays de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation10">
+            <input class="form-control" type="" id="validation10" name="pays_naissance">
           </div>
 
           <h5 class="">Informations sur le décès</h5>
           <div class="form-group">
             <label class="">Date du décès (*)</label>
-            <input class="form-control" type="date" name="" id="validation11">
+            <input class="form-control" type="date" id="validation11" name="information_deces">
           </div>
           <div class="form-group">
             <label class="">Ville du décès (*)</label>
-            <input class="form-control" type="" name="" id="validation12">
+            <input class="form-control" type="" id="validation12" name="ville_deces">
           </div>
           <div class="form-group">
             <label class="">Pays du décès (*)</label>
-            <input class="form-control" type="" name="" id="validation13">
+            <input class="form-control" type="" id="validation13" name="pays_deces">
           </div>
 
           <hr>
@@ -180,35 +180,35 @@
           <p>Où désirez-vous recevoir l'acte?</p>
           <div class="form-group">
             <label class="">Nom d'usage (*)</label>
-            <input class="form-control" type="" name="" id="validation14">
+            <input class="form-control" type="" id="validation14" name="nom_usage">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation15">
+            <input class="form-control" type="" id="validation15" name="prenom_acte">
           </div>
           <div class="form-group">
             <label class="">Adresse (*)</label>
-            <input class="form-control" type="" name="" id="validation16">
+            <input class="form-control" type="" id="validation16" name="adresse_acte">
           </div>
           <div class="form-group">
             <label class="">Code postal (*)</label>
-            <input class="form-control" type="" name="" id="validation17">
+            <input class="form-control" type="" id="validation17" name="code_postal_acte">
           </div>
           <div class="form-group">
             <label class="">Ville (*)</label>
-            <input class="form-control" type="" name="" id="validation18">
+            <input class="form-control" type="" id="validation18" name="ville_acte">
           </div>
           <div class="form-group">
             <label class="">Pays (*)</label>
-            <input class="form-control" type="" name="" id="validation19">
+            <input class="form-control" type=""  id="validation19" name="pays_acte">
           </div>
           <div class="form-group">
             <label class="">Adresse e-mail (*)</label>
-            <input class="form-control" type="" name="" id="validation20">
+            <input class="form-control" type="mail" id="validation20" name="email_acte">
           </div>
           <div class="form-group">
             <label class="">Téléphone (*)</label>
-            <input class="form-control" type="" name="" id="validation21">
+            <input class="form-control" type="" id="validation21" name="telephone_acte">
           </div>
 
 
@@ -218,11 +218,11 @@
           <p>Les frais de traitements de nos services vous permettent d'obtenir votre acte sans le moindre déplacement de votre part.</p>
           <p>Ses frais s'élèvent à 29,90€ et comprennent le traitement complet de votre dossier dont l'impression de votre demande, les vérifications, l'enregistrement et le suivi de votre dossier.</p>
           <div class="form-group">
-            <input class="" type="checkbox" name="" id="condition_un" required>
+            <input value="false" class="" name="demande_immediat" type="checkbox"  id="condition_un" required>
             <label class="label_inline" id="obligationOne">Je demande l'exécution immédiate du traitement de ma demande et renonce ainsi expressément à mon droit de rétractation pour que la prestation commence avant l'échéance du délai légal de retractation.</label>
           </div>
           <div class="form-group">
-            <input class="" type="checkbox" name="" id="condition_deux" required>
+            <input value="false" name="accept_condition_generale" class="" type="checkbox" name="" id="condition_deux" required>
             <label class="label_inline" id="obligationTwo">J’accepte les conditions générales d’utilisation et je certifie sur l’honneur l’exactitude des informations fournies. Il est rappelé que toute personne procédant à une fausse déclaration pour elle-même ou pour autrui peut s’exposer aux sanctions prévues aux articles 441-1 du code pénal et suivants.</label>
           </div>
           <button class="btn btn-success button_right" id="finaliseApplication">FINALISER LA DEMANDE</button>

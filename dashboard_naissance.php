@@ -97,7 +97,7 @@ $_SESSION['timeout']=time();
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM acteDeNaissance ORDER BY id_naissance ASC";
+                    $sql = "SELECT * FROM actedenaissance ORDER BY id_naissance ASC";
 
                     $resultat = mysqli_query($conn, $sql);
 
