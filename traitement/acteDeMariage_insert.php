@@ -50,6 +50,7 @@ if(
   && isset($_POST["prenom_pere"])
   && isset($_POST["nom_naissance_mere"])
   && isset($_POST["prenom_mere"])
+  && isset($_POST["civilite_deux"])
   && isset($_POST["nom_naissance_deux"])
   && isset($_POST["prenom_deux"])
   && isset($_POST["date_naissance_deux"])
@@ -103,6 +104,7 @@ if(
   $prenom_pere = $_POST["prenom_pere"];
   $nom_naissance_mere = $_POST["nom_naissance_mere"];
   $prenom_mere = $_POST["prenom_mere"];
+  $civilite_deux = $_POST["civilite_deux"];
   $nom_naissance_deux = $_POST["nom_naissance_deux"];
   $prenom_deux = $_POST["prenom_deux"];
   $date_naissance_deux = $_POST["date_naissance_deux"];
@@ -124,7 +126,7 @@ if(
   $telephone = $_POST["telephone"];
 
 
-$sql ="INSERT INTO actedemariage (acte_en_tant_que, type_acte, nb_copie, date_mariage, ville_mariage, code_postal_mariage, pays_mariage, civilite, nom_naissance, prenom_naissance, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nationalite, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_naissance_deux, prenom_deux, date_naissance_deux, ville_naissance_deux, code_postal_naissance_deux, pays_naissance_deux, nationalite_deux, nom_naissance_pere_deux, prenom_pere_deux, nom_naissance_mere_deux, prenom_mere_deux, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$date_mariage', '$ville_mariage', '$code_postal_mariage', '$pays_mariage', '$civilite', '$nom_naissance', '$prenom_naissance', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nationalite', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_naissance_deux', '$prenom_deux', '$date_naissance_deux', '$ville_naissance_deux', '$code_postal_naissance_deux', '$pays_naissance_deux', '$nationalite_deux', '$nom_naissance_pere_deux', '$prenom_pere_deux', '$nom_naissance_mere_deux', '$prenom_mere_deux', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone')";
+$sql ="INSERT INTO actedemariage (acte_en_tant_que, type_acte, nb_copie, date_mariage, ville_mariage, code_postal_mariage, pays_mariage, civilite, nom_naissance, prenom_naissance, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nationalite, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_naissance_deux, civilite_deux, prenom_deux, date_naissance_deux, ville_naissance_deux, code_postal_naissance_deux, pays_naissance_deux, nationalite_deux, nom_naissance_pere_deux, prenom_pere_deux, nom_naissance_mere_deux, prenom_mere_deux, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$date_mariage', '$ville_mariage', '$code_postal_mariage', '$pays_mariage', '$civilite', '$nom_naissance', '$prenom_naissance', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nationalite', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_naissance_deux', ,'$civilite_deux' '$prenom_deux', '$date_naissance_deux', '$ville_naissance_deux', '$code_postal_naissance_deux', '$pays_naissance_deux', '$nationalite_deux', '$nom_naissance_pere_deux', '$prenom_pere_deux', '$nom_naissance_mere_deux', '$prenom_mere_deux', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone')";
 
 
 

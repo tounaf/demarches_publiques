@@ -1,3 +1,6 @@
+<?php
+  include('connexion/connexion.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -164,8 +167,8 @@
         <img class="logos" src="assets/img/paiement.png">
       </center>
       <br>
-      <h5><center>PAYER VOTRE DEMANDE</center></h5>
-      <center><p class="logos_vague2">Paiement sécurisé de votre demande</p></center>
+      <h5><center>RÉGLER VOS FRAIS ADMINISTRATIFS</center></h5>
+      <center><p class="logos_vague2">Règlement de vos frais administratifs via un système sécurisé</p></center>
     </div>
     <div class="col-md-4">
       <center>
@@ -240,7 +243,34 @@
   </div>
   <br>
   <div class="row">
+    <?php
+      $sql = "SELECT * FROM article";
+      $resultat = mysqli_query($conn, $sql);
+      $total_ligne = mysqli_num_rows($resultat);
+      if(isset($_GET["debut"]))
+      {
+        $commencement = $_GET["debut"];
+        $nbliste = 3;
+      }
+      else
+      {
+        $commencement = 0;
+        $nbliste = 3;
+      }
+
+      $nb_page = ceil($total_ligne/$nbliste);
+      $sql = "SELECT * FROM article ORDER BY id DESC LIMIT  $commencement, $nbliste";
+      $result = mysqli_query($conn, $sql);
+      if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+    ?>
     <div class="col-md-4">
+      <center>
+        <img style="width: 190px;" src="<?php echo 'upload/'.$row['image_art'] ?>">
+        <h6 class="articles"><?php echo $row['titre_art']; ?></h6>
+      </center>
+    </div>
+ <!--    <div class="col-md-4">
       <center>
         <img class="logos" src="assets/img/file.png">
         <h6 class="articles">Titre</h6>
@@ -251,20 +281,20 @@
         <img class="logos" src="assets/img/file.png">
         <h6 class="articles">Titre</h6>
       </center>
-    </div>
-    <div class="col-md-4">
-      <center>
-        <img class="logos" src="assets/img/file.png">
-        <h6 class="articles">Titre</h6>
-      </center>
-    </div>
+    </div> -->
+    <?php
+      }
+    }
+    ?>
   </div>
 </div>
 
 <br>
 
 <center>
-  <input type="Submit" class="voir_actualites" value="Voir toutes les actualités">
+  <a href="actualites.php">
+    <input type="Submit" class="voir_actualites" value="Voir toutes les actualités">
+  </a>
 </center>
 
 <br>

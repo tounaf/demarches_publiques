@@ -27,35 +27,17 @@
 <body>
 
 <?php
+  $id = $_GET['id'];
 
-include('../connexion/connexion.php');
+  include('../connexion/connexion.php');
 
-if(
-  isset($_POST["titre"])
-  && isset($_FILES["file"])
-  && isset($_POST["contenu"])
-  && isset($_POST["date"])
-  )
+  // sql to delete a record
+  $sql = "DELETE FROM actedemariage WHERE id_mariage=$id";
 
-  $titre = addslashes(trim($_POST["titre"]));
-
-  $file_name = $_FILES['file']['name'];
-  $file_tmp_name = $_FILES['file']['tmp_name'];
-  $file_destination = "../upload/".$file_name;
-
-  $contenu = addslashes(trim($_POST["contenu"]));
-  $date = trim($_POST["date"]);
-
-
-$sql ="INSERT INTO article(titre_art, image_art, contenu_art, date_pub_art) VALUES ('$titre', '$file_name', '$contenu', '$date')";
-
-// var_dump($sql);die();
-
-if (mysqli_query($conn, $sql)) {
-    if(move_uploaded_file($file_tmp_name, $file_destination)){
+  if ($conn->query($sql) === TRUE) {
       echo "<script type='text/javascript'>
        Swal.fire(
-      'Article ajouté !',
+      'Suppression réussie!',
       'Veuillez cliquer sur le boutton ci-dessous !',
       'success'
     );
@@ -64,49 +46,16 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../dashboard_articles.php';
+                window.location = '../dashboard_mariage.php';
                 })
             }
     </script>";
-   } else {
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Oops...Une erreur s'est produite !',
-      'Veuillez entrer à nouveau les informations',
-      'error'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = 'article_creation.php';
-                })
-            }
-    </script>";
-   }
 
-   echo "<script type='text/javascript'>
+  } else {
+      echo "<script type='text/javascript'>
        Swal.fire(
-      'Article ajouté !',
+      'Veuillez supprimer à nouveau',
       'Veuillez cliquer sur le boutton ci-dessous !',
-      'success'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = '../dashboard_articles.php';
-                })
-            }
-    </script>";
-
-} else {
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Oops...Une erreur s'est produite !',
-      'Veuillez entrer à nouveau les informations',
       'error'
     );
     var btnSwalls = document.getElementsByClassName('swal2-confirm');
@@ -114,15 +63,15 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = 'article_creation.php';
+                window.location = '../dashboard_mariage.php';
                 })
             }
     </script>";
-}
+  }
 
-mysqli_close($conn);
+  $conn->close();
 
- ?>
+?>
 
 <!-- SCRIPTS -->
   <script src="../assets/js/main.js"></script>
@@ -131,3 +80,4 @@ mysqli_close($conn);
 
 </body>
 </html>
+

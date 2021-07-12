@@ -113,10 +113,12 @@ $_SESSION['timeout']=time();
                     <td><?php echo $row['telephone']; ?></td>
                     <td>
                       <center>
-                      	<a href="traitement/acteDeMariage_voir.php?id=<?= $row["id_naissance"]?>">
+                      	<a href="traitement/acteDeMariage_voir.php?id=<?php echo $row['id_mariage']; ?>">
                           <button class="btn btn-info"><i class="fa fa-eye"></i></button>
                         </a>
-                        <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                        <a href="traitement/acteDeMariage_delete.php?id=<?php echo $row["id_mariage"] ?>" class="btn btn-danger" onclick="return confirm('Please confirm!')">
+                          <i class="fa fa-trash"></i>
+                        </a>
                       </center>
                     </td>
                   </tr>

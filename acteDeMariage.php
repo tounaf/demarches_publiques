@@ -211,7 +211,7 @@
           <hr>
           <div class="form-group">
             <label class="">Civilité (*)</label>
-            <select class="form-control" id="validation20">
+            <select class="form-control" id="validation20" name="civilite_deux">
               <option>- Choisir votre réponse -</option>
               <option>Monsieur</option>
               <option>Madame</option>
