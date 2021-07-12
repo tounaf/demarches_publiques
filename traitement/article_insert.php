@@ -37,18 +37,21 @@ if(
   && isset($_POST["date"])
   )
 
-  $chemin = "upload/";
-  $chemin = $chemin . basename( $_FILES['file']['name']);
   $titre = addslashes(trim($_POST["titre"]));
+
+  $file_name = $_FILES['file']['name'];
+  $file_tmp_name = $_FILES['file']['tmp_name'];
+  $file_destination = "../upload/".$file_name;
+
   $contenu = addslashes(trim($_POST["contenu"]));
   $date = trim($_POST["date"]);
 
 
-$sql ="INSERT INTO article(titre_art, image_art, contenu_art, date_pub_art) VALUES ('$titre', '$chemin', '$contenu', '$date')";
+$sql ="INSERT INTO article(titre_art, image_art, contenu_art, date_pub_art) VALUES ('$titre', '$file_name', '$contenu', '$date')";
 
 
 if (mysqli_query($conn, $sql)) {
-    if(move_uploaded_file($_FILES['file']['tmp_name'], $chemin)){
+    if(move_uploaded_file($file_tmp_name, $file_destination)){
       echo "<script type='text/javascript'>
        Swal.fire(
       'Article ajouté !',

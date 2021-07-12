@@ -206,7 +206,7 @@ a:hover {
                 <div class="text-center">
                   <div class="article-img wow zoomIn">
                   <center>
-                    <img src="<?php echo $row['image_art'] ?>">
+                    <img src="<?php echo 'upload/'.$row['image_art'] ?>">
                   </center>
                     <div class="article-info">
                       <center>
@@ -216,7 +216,7 @@ a:hover {
                   </div>
                   <div class="article-content">
                     <p class="wow fadeInUp text-justify">
-                      <?php echo $row['contenu_art']; ?>
+                      <?php echo 'upload/'.$row['contenu_art']; ?>
                     </p>
                   </div>
                 </div>

@@ -88,22 +88,22 @@
 
       <div id="section1">
 
-      <form method="post" action="">
+      <form method="post" action="traitement/casierJudiciaire_insert.php" enctype="multipart/form-data">
         <!-- PARTIE 1 -->
         <div id="part1" class="box_effect_form">
           <h5 class="">1ère ETAPE - RENSEIGNEMENTS SUR LE CASIER</h5>
           <p class="">Veuillez renseigner les champs ci-après pour le traitement de votre demande</p>
           <div class="form-group">
             <label class="">Indiquez votre lieu de naissance (*)</label>
-            <select class="form-control" id="validation01">
+            <select class="form-control" id="validation01" name="lieu_naissance" onclick="myOperation2()">
               <option>- Choisir votre réponse -</option>
-              <option>France métropolitaine, dans un département d'Outre-Mer, à Saint-Barthélemy, Saint-Martin ou Saint-Pierre-et-Miquelon</option>
+              <option>France métropolitaine, dans un département d\'Outre-Mer, à Saint-Barthélemy, Saint-Martin ou Saint-Pierre-et-Miquelon</option>
               <option>A l’étranger, hors de France</option>
             </select>
           </div>
           <div class="form-group">
             <label class="">Votre adresse est-elle en France?</label>
-            <select class="form-control" id="validation02">
+            <select class="form-control" id="validation02" name="adresse">
               <option>- Choisir votre réponse -</option>
               <option>Oui</option>
               <option>Non</option>
@@ -111,15 +111,15 @@
           </div>
           <div class="form-group">
             <label class="">Désirez vous une traduction de votre casier?</label>
-            <select class="form-control" id="validation03">
+            <select class="form-control" id="validation03" onclick="myOperation1()" name="traduction">
               <option>- Choisir votre réponse -</option>
               <option>Oui</option>
               <option>Non</option>
             </select>
           </div>
-          <div class="form-group">
+          <div class="form-group" id="r_yes1" style="display: none">
             <label class="">Sélectionnez la langue de traduction</label>
-            <select class="form-control" id="">
+            <select class="form-control" id="" name="langue_traduction">
               <option>- Choisir votre réponse -</option>
               <option>ALLEMAND</option>
               <option>ANGLAIS</option>
@@ -155,7 +155,7 @@
           <p class="">Informations sur la personne concernée par l'acte</p>
           <div class="form-group">
             <label class="">Civilité (*)</label>
-            <select class="form-control" name="" id="validation04">
+            <select class="form-control" name="civilite" id="validation04">
               <option>- Choisir votre réponse -</option>
               <option>Monsieur</option>
               <option>Madame</option>
@@ -163,58 +163,78 @@
           </div>
           <div class="form-group">
             <label class="">Nom de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation05">
+            <input class="form-control" type="" name="nom_naissance" id="validation05">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation06">
+            <input class="form-control" type="" name="prenom" id="validation06">
           </div>
           <div class="form-group">
             <label class="">Date de naissance (*)</label>
-            <input class="form-control" type="date" name="" id="validation07">
+            <input class="form-control" type="date" name="date_naissance" id="validation07">
           </div>
           <div class="form-group">
             <label class="">Ville de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation08">
+            <input class="form-control" type="" name="ville_naissance" id="validation08">
           </div>
           <div class="form-group">
             <label class="">Code postal de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation09">
+            <input class="form-control" type="" name="code_postal" id="validation09">
           </div>
           <div class="form-group">
             <label class="">Pays de naissance (*)</label>
-            <input class="form-control" type="" name="" id="validation10">
+            <input class="form-control" type="" name="pays_naissance" id="validation10">
           </div>
 
           <!-- FILE -->
-          <hr>
-          <h5 class="">Téléchargez vos justificatifs d'identité</h5>
-          <p>Un justificatif d'identité est obligatoire pour le traitement de la demande de casier judiciaire de toutes personnes nées à l’étranger. </p>
-          <p>Vous pouvez télécharger jusqu’à 4 fichiers maximum. Les pièces acceptées sont: une copie recto verso de votre carte d'identité nationale française ou étrangère, ou une copie recto-verso de votre carte de séjour, ou une copie de votre passeport français ou étranger, ou une copie de votre acte de naissance.</p>
-          <input class="form-control" style="padding-bottom: 35px;" type="file" name="" >
-          <input class="form-control" style="padding-bottom: 35px;" type="file" name="" >
-          <input class="form-control" style="padding-bottom: 35px;" type="file" name="" >
-          <input class="form-control" style="padding-bottom: 35px;" type="file" name="" >
+          <div class="form-group" id="r_yes2" style="display: none;">
+            <hr>
+            <h5 class="">Téléchargez vos justificatifs d'identité</h5>
+            <p>Un justificatif d'identité est obligatoire pour le traitement de la demande de casier judiciaire de toutes personnes nées à l’étranger. </p>
+            <p>Vous pouvez télécharger jusqu’à <b>4 fichiers maximum</b>. Les pièces acceptées sont: <b>une copie recto verso de votre carte d'identité nationale française ou étrangère, ou une copie recto-verso de votre carte de séjour, ou une copie de votre passeport français ou étranger, ou une copie de votre acte de naissance.</b></p>
+            <b><p style="color: #ee2436;">(*) Veuillez insérer uniquement des fichiers .pdf ou .PDF</p></b>
+            <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_un">
+            <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_deux" >
+            <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_trois" >
+            <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_quatre" >
+          </div>
           <!-- FILE -->
+
 
           <hr>
           <h5 class="">Adresse de réception de l'acte</h5>
           <p>Où désirez-vous recevoir le casier ?</p>
           <div class="form-group">
             <label class="">Nom d'usage (*)</label>
-            <input class="form-control" type="" name="" id="validation11">
+            <input class="form-control" type="" name="nom_usage" id="validation11">
           </div>
           <div class="form-group">
             <label class="">Prénoms (*)</label>
-            <input class="form-control" type="" name="" id="validation12">
+            <input class="form-control" type="" name="prenom_casier" id="validation12">
           </div>
           <div class="form-group">
             <label class="">Adresse (*)</label>
-            <input class="form-control" type="" name="" id="validation13">
+            <input class="form-control" type="" name="adresse_casier" id="validation13">
           </div>
           <div class="form-group">
             <label class="">Code postal (*)</label>
-            <input class="form-control" type="" name="" id="validation14">
+            <input class="form-control" type="" name="code_postal_casier" id="validation14">
+          </div>
+          <div class="form-group">
+            <label class="">Ville (*)</label>
+            <input class="form-control" type="" name="ville_acte" id="validation15">
+          </div>
+          <div class="form-group">
+            <label class="">Pays (*)</label>
+            <input class="form-control" type="" name="pays_acte" id="validation16">
+          </div>
+          <div class="form-group">
+            <label class="">Adresse e-mail (*)</label>
+            <input class="form-control" type="" name="email_acte" id="validation17">
+          </div>
+          <div class="form-group">
+            <label class="">Téléphone (*)</label>
+            <input class="form-control" type="" name="telephone_acte" id="validation18">
           </div>
 
           <hr>
@@ -223,11 +243,11 @@
           <p>Les frais de traitements de nos services vous permettent d'obtenir votre casier judiciaire sans le moindre déplacement de votre part.</p>
           <p>Ses frais s'élèvent à 29,90€ et comprennent le traitement complet de votre dossier dont l'impression de votre demande, les vérifications, l'enregistrement et le suivi de votre dossier. </p>
           <div class="form-group">
-            <input class="" type="checkbox" name="" id="condition_un" required>
+            <input value="false" class="" name="demande_immediat" type="checkbox"  id="condition_un" required>
             <label class="label_inline" id="obligationOne">Je demande l'exécution immédiate du traitement de ma demande d'acte de naissance et renonce ainsi expressément à mon droit de rétractation pour que la prestation commence avant l'échéance du délai légal de retractation.</label>
           </div>
           <div class="form-group">
-            <input class="" type="checkbox" name="" id="condition_deux" required>
+            <input value="false" name="accept_condition_generale" class="" type="checkbox" id="condition_deux" required>
             <label class="label_inline" id="obligationTwo">J’accepte les conditions générales d’utilisation et je certifie sur l’honneur l’exactitude des informations fournies. Il est rappelé que toute personne procédant à une fausse déclaration pour elle-même ou pour autrui peut s’exposer aux sanctions prévues aux articles 441-1 du code pénal et suivants.</label>
           </div>
           <button class="btn btn-success button_right" id="finaliseApplication">FINALISER LA DEMANDE</button>

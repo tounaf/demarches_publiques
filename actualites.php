@@ -213,7 +213,7 @@ a:hover {
                       <div class="row">
                         <div class="col-md-4 col-sm-12">
                           <div class="post-image">
-                            <img src="<?php echo $row['image_art'] ?>">
+                            <img src="<?php echo 'upload/'.$row['image_art'] ?>">
                           </div>
                         </div>
                         <div class="col-md-8 col-sm-12">

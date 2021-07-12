@@ -96,11 +96,21 @@ $_SESSION['timeout']=time();
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <?php
+                    $sql = "SELECT * FROM actedemariage ORDER BY id_mariage ASC";
+
+                    $resultat = mysqli_query($conn, $sql);
+
+                    if($resultat){
+                      if(mysqli_num_rows($resultat)>0){
+                        while ($row = mysqli_fetch_assoc($resultat)){
+
+                  ?>
+                  <tr data-id="<?php echo $row['id_mariage']; ?>">
+                    <td><?php echo $row['nom_naissance']; ?></td>
+                    <td><?php echo $row['prenom_naissance']; ?></td>
+                    <td><?php echo $row['email_acte']; ?></td>
+                    <td><?php echo $row['telephone']; ?></td>
                     <td>
                       <center>
                       	<button class="btn btn-info"><i class="fa fa-eye"></i></button>
@@ -109,6 +119,11 @@ $_SESSION['timeout']=time();
                     </td>
                   </tr>
                 </tbody>
+                <?php
+                      }
+                    }
+                  }
+                ?>
             </table>
           </div>
         </section>

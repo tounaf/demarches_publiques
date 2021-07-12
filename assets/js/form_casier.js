@@ -1,3 +1,44 @@
+// Désirez vous une traduction de votre casier?
+    function myOperation1() {
+
+      var operation1 = document.getElementById("validation03").value;
+    console.log(validation03);
+
+      if (operation1 == "Non") {
+        // document.getElementById("r_no1").style.display = "block";
+        document.getElementById("r_yes1").style.display = "none";
+      }
+
+      if (operation1 == "Oui") {
+        document.getElementById("r_yes1").style.display = "block";
+        // document.getElementById("r_no1").style.display = "none";
+      }
+
+      if (operation1 == "- Choisir votre réponse -") {
+        document.getElementById("r_yes1").style.display = "none";
+        // document.getElementById("r_no1").style.display = "none";
+      }
+
+
+    }
+
+// Indiquez votre lieu de naissance ?
+    function myOperation2() {
+
+      var operation2 = document.getElementById("validation01").value;
+    console.log(validation01);
+
+      if (operation2 == "A l’étranger, hors de France") {
+        document.getElementById("r_yes2").style.display = "block";
+        // document.getElementById("r_no1").style.display = "none";
+      } else {
+        document.getElementById("r_yes2").style.display = "none";
+      }
+
+
+    }
+
+
 // FORM VALIDATION
 var inputValidation01 = document.getElementById("validation01");
 var inputValidation02 = document.getElementById("validation02");
@@ -74,6 +115,11 @@ var inputValidation11 = document.getElementById("validation11");
 var inputValidation12 = document.getElementById("validation12");
 var inputValidation13 = document.getElementById("validation13");
 var inputValidation14 = document.getElementById("validation14");
+var inputValidation15 = document.getElementById("validation15");
+var inputValidation16 = document.getElementById("validation16");
+var inputValidation17 = document.getElementById("validation17");
+var inputValidation18 = document.getElementById("validation18");
+var inputValidation19 = document.getElementById("validation19");
 
 var finalButton = document.getElementById("finaliseApplication");
 var errorMessagE = document.getElementById("errorMessage");
@@ -173,6 +219,38 @@ finalButton.onclick = function(){
     inputValidation14.style.borderColor = "#cccccc";
   }
 
+  if (inputValidation15.value=='') {
+    errorMessagE.style.display = "block";
+    inputValidation15.style.borderColor = "red";
+  } else {
+    errorMessagE.style.display = "none";
+    inputValidation15.style.borderColor = "#cccccc";
+  }
+
+  if (inputValidation16.value=='') {
+    errorMessagE.style.display = "block";
+    inputValidation16.style.borderColor = "red";
+  } else {
+    errorMessagE.style.display = "none";
+    inputValidation16.style.borderColor = "#cccccc";
+  }
+
+  if (inputValidation17.value=='') {
+    errorMessagE.style.display = "block";
+    inputValidation17.style.borderColor = "red";
+  } else {
+    errorMessagE.style.display = "none";
+    inputValidation17.style.borderColor = "#cccccc";
+  }
+
+  if (inputValidation18.value=='') {
+    errorMessagE.style.display = "block";
+    inputValidation18.style.borderColor = "red";
+  } else {
+    errorMessagE.style.display = "none";
+    inputValidation18.style.borderColor = "#cccccc";
+  }
+
 
 // GENERAL CONDITION CHECKING
 
@@ -185,7 +263,7 @@ finalButton.onclick = function(){
     }
 
 // SUBMISSION IF ALL IS OK
-   if (inputValidation04.value!=='- Choisir votre réponse -' && inputValidation05.value!=='' && inputValidation06.value!=='' && inputValidation07.value!=='' && inputValidation08.value!=='' && inputValidation09.value!=='' && inputValidation10.value!=='' && inputValidation11.value!=='' && inputValidation12.value!=='' && inputValidation13.value!=='' && inputValidation14.value!=='') {
+   if (inputValidation04.value!=='- Choisir votre réponse -' && inputValidation05.value!=='' && inputValidation06.value!=='' && inputValidation07.value!=='' && inputValidation08.value!=='' && inputValidation09.value!=='' && inputValidation10.value!=='' && inputValidation11.value!=='' && inputValidation12.value!=='' && inputValidation13.value!=='' && inputValidation14.value!=='' && inputValidation15.value!=='' && inputValidation16.value!=='' && inputValidation17.value!=='' && inputValidation18.value!=='') {
     // Conditions générales
      if(!form.accept_condition_generale.checked) {
         alert("Please indicate that you accept the Terms and Conditions");

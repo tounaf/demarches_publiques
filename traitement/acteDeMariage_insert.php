@@ -140,7 +140,7 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../acteDeNaissance.php';
+                window.location = '../acteDeMariage.php';
                 })
             }
     </script>";
@@ -157,7 +157,7 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../acteDeNaissance.php';
+                window.location = '../acteDeMariage.php';
                 })
             }
     </script>";
