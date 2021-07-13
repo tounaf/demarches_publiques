@@ -1,6 +1,6 @@
 <?php
 
-    require_once './parameters.php';
+    require_once '../parameters.php';
     $servername = PARAMS['database_host'];
     $username = PARAMS['database_user'];
     $password = PARAMS['database_password'];
