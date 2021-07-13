@@ -1,7 +1,7 @@
 <script src="../assets/js/form_script.js"></script>
 
 <?php
-
+require_once '../parameters.php';
 	include('../connexion/connexion.php');
     include("../mail/setting_mail.php");
 
