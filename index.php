@@ -266,22 +266,12 @@
     ?>
     <div class="col-md-4">
       <center>
-        <img style="width: 190px;" src="<?php echo 'upload/'.$row['image_art'] ?>">
-        <h6 class="articles"><?php echo $row['titre_art']; ?></h6>
+        <a href="actualites.php?id=<?php echo $row['id'] ?>">
+          <img style="width: 190px; height: 248px;" src="<?php echo 'upload/'.$row['image_art'] ?>">
+          <h6 class="articles"><?php echo $row['titre_art']; ?></h6>
+        </a>
       </center>
     </div>
- <!--    <div class="col-md-4">
-      <center>
-        <img class="logos" src="assets/img/file.png">
-        <h6 class="articles">Titre</h6>
-      </center>
-    </div>
-    <div class="col-md-4">
-      <center>
-        <img class="logos" src="assets/img/file.png">
-        <h6 class="articles">Titre</h6>
-      </center>
-    </div> -->
     <?php
       }
     }

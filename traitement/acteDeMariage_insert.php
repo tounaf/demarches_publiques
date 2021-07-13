@@ -126,8 +126,9 @@ if(
   $telephone = $_POST["telephone"];
 
 
-$sql ="INSERT INTO actedemariage (acte_en_tant_que, type_acte, nb_copie, date_mariage, ville_mariage, code_postal_mariage, pays_mariage, civilite, nom_naissance, prenom_naissance, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nationalite, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_naissance_deux, civilite_deux, prenom_deux, date_naissance_deux, ville_naissance_deux, code_postal_naissance_deux, pays_naissance_deux, nationalite_deux, nom_naissance_pere_deux, prenom_pere_deux, nom_naissance_mere_deux, prenom_mere_deux, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$date_mariage', '$ville_mariage', '$code_postal_mariage', '$pays_mariage', '$civilite', '$nom_naissance', '$prenom_naissance', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nationalite', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_naissance_deux', ,'$civilite_deux' '$prenom_deux', '$date_naissance_deux', '$ville_naissance_deux', '$code_postal_naissance_deux', '$pays_naissance_deux', '$nationalite_deux', '$nom_naissance_pere_deux', '$prenom_pere_deux', '$nom_naissance_mere_deux', '$prenom_mere_deux', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone')";
+$sql ="INSERT INTO actedemariage (acte_en_tant_que, type_acte, nb_copie, date_mariage, ville_mariage, code_postal_mariage, pays_mariage, civilite, nom_naissance, prenom_naissance, date_naissance, ville_naissance, code_postal_naissance, pays_naissance, nationalite, nom_naissance_pere, prenom_pere, nom_naissance_mere, prenom_mere, nom_naissance_deux, civilite_deux, prenom_deux, date_naissance_deux, ville_naissance_deux, code_postal_naissance_deux, pays_naissance_deux, nationalite_deux, nom_naissance_pere_deux, prenom_pere_deux, nom_naissance_mere_deux, prenom_mere_deux, nom_usage, prenom_acte, adresse_acte, code_postal_acte, ville_acte, pays_acte, email_acte, telephone) VALUES ('$acte_en_tant_que', '$type_acte', '$nb_copie', '$date_mariage', '$ville_mariage', '$code_postal_mariage', '$pays_mariage', '$civilite', '$nom_naissance', '$prenom_naissance', '$date_naissance', '$ville_naissance', '$code_postal_naissance', '$pays_naissance', '$nationalite', '$nom_naissance_pere', '$prenom_pere', '$nom_naissance_mere', '$prenom_mere', '$nom_naissance_deux', '$civilite_deux', '$prenom_deux', '$date_naissance_deux', '$ville_naissance_deux', '$code_postal_naissance_deux', '$pays_naissance_deux', '$nationalite_deux', '$nom_naissance_pere_deux', '$prenom_pere_deux', '$nom_naissance_mere_deux', '$prenom_mere_deux', '$nom_usage', '$prenom_acte', '$adresse_acte', '$code_postal_acte', '$ville_acte', '$pays_acte', '$email_acte', '$telephone')";
 
+  // var_dump($acte_en_tant_que);die();
 
 
 if (mysqli_query($conn, $sql)) {
@@ -148,21 +149,22 @@ if (mysqli_query($conn, $sql)) {
     </script>";
 
 } else {
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Oops...Une erreur s\'est produite !',
-      'Veuillez entrer à nouveau les informations',
-      'error'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = '../acteDeMariage.php';
-                })
-            }
-    </script>";
+    // echo "<script type='text/javascript'>
+    //    Swal.fire(
+    //   'Oops...Une erreur s\'est produite !',
+    //   'Veuillez entrer à nouveau les informations',
+    //   'error'
+    // );
+    // var btnSwalls = document.getElementsByClassName('swal2-confirm');
+    //         for(var i = 0; i<btnSwalls.length; i++)
+    //         {
+    //           btnSwalls[i].addEventListener('click', function(e){
+    //             e.preventDefault();
+    //             window.location = '../acteDeMariage.php';
+    //             })
+    //         }
+    // </script>";
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 mysqli_close($conn);

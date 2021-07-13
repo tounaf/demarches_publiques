@@ -38,7 +38,7 @@
   padding: 15px;
 }
 #post .post-content .post-image img {
-  width: 100%;
+  width: 200px;
   height: 200px;
 }
 #post .post-content .post-detail {

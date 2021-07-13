@@ -38,10 +38,7 @@
 #post .post-content .post-image {
   padding: 15px;
 }
-#post .post-content .post-image img {
-  width: 100%;
-  height: 200px;
-}
+
 #post .post-content .post-detail {
   padding: 15px;
 }
@@ -77,7 +74,7 @@
   position: relative;
 }
 .article-img img {
-  width: 100%;
+  width: 50%;
 }
 .article-info {
   /*position: absolute;*/
@@ -216,7 +213,7 @@ a:hover {
                   </div>
                   <div class="article-content">
                     <p class="wow fadeInUp text-justify">
-                      <?php echo 'upload/'.$row['contenu_art']; ?>
+                      <?php echo $row['contenu_art']; ?>
                     </p>
                   </div>
                 </div>
