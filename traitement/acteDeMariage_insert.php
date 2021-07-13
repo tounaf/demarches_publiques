@@ -149,22 +149,22 @@ if (mysqli_query($conn, $sql)) {
     </script>";
 
 } else {
-    // echo "<script type='text/javascript'>
-    //    Swal.fire(
-    //   'Oops...Une erreur s\'est produite !',
-    //   'Veuillez entrer à nouveau les informations',
-    //   'error'
-    // );
-    // var btnSwalls = document.getElementsByClassName('swal2-confirm');
-    //         for(var i = 0; i<btnSwalls.length; i++)
-    //         {
-    //           btnSwalls[i].addEventListener('click', function(e){
-    //             e.preventDefault();
-    //             window.location = '../acteDeMariage.php';
-    //             })
-    //         }
-    // </script>";
-  echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "<script type='text/javascript'>
+       Swal.fire(
+      'Oops...Une erreur s\'est produite !',
+      'Veuillez entrer à nouveau les informations',
+      'error'
+    );
+    var btnSwalls = document.getElementsByClassName('swal2-confirm');
+            for(var i = 0; i<btnSwalls.length; i++)
+            {
+              btnSwalls[i].addEventListener('click', function(e){
+                e.preventDefault();
+                window.location = '../acteDeMariage.php';
+                })
+            }
+    </script>";
+  // echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
 mysqli_close($conn);
