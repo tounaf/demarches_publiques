@@ -9,7 +9,7 @@
 
 <?php
     require_once '../parameters.php';
-	if (!empty($_POST['nom']) && !empty($_POST['prenom'])&& !empty($_POST['contact']) && !empty($_POST['email']) && !empty($_POST["message"])) {
+	if (!empty($_POST['contact']) && !empty($_POST['email']) && !empty($_POST["message"])) {
 
 	$nom = $_POST['nom'];
 	$prenom = $_POST['prenom'];

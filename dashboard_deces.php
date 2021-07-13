@@ -2,7 +2,7 @@
 session_start();
 if(isset($_SESSION['user']))
 {
-
+require_once 'parameters.php';
 include('connexion/connexion.php');
 
 // 10 mins in seconds

@@ -38,7 +38,7 @@ if(isset($_SESSION['user']))
     $login = $_POST['identifiant'];
     $mdp = $_POST['password'];
 
-
+  require_once '../parameters.php';
   include('../connexion/connexion.php');
 
   $sql = "SELECT * FROM login WHERE login_identifiant = '$login' AND login_password='$mdp'";
