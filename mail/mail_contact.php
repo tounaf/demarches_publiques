@@ -23,59 +23,75 @@
 try {
 
     //Server settings
-	$mail->isSMTP();
-	$mail->Host = PARAMS['mailer_host'];
-	$mail->SMTPAuth = true;
-	$mail->Username = PARAMS['mailer_user'];
-	$mail->Password = PARAMS['mailer_password'];
-	$mail->Port = PARAMS['mailer_port'];;
-//	$mail->SMTPSecure = "ssl";
+        $mail->isSMTP();
+        $mail->Host = PARAMS['mailer_host'];
+//        $mail->SMTPAuth = true;
+//        $mail->Username = PARAMS['mailer_user'];
+//        $mail->Password = PARAMS['mailer_password'];
+        $mail->Port = PARAMS['mailer_port'];;
+    //	$mail->SMTPSecure = "ssl";
 
-	//email setting
-	$mail->isHTML(true);
-	$mail->setFrom(PARAMS['no_replay'], $nom);
-	$mail->AddAddress(PARAMS['contact_mail']);
-	$mail->Subject = ("$email ($objet)");
-	$mail->Body = "<b>Nom : </b>".$nom."<br>"."<b>Prénom : </b>".$prenom."<br>". "<b>Contact : </b>".$contact."<br>". "<b>Email :</b> ".$email."<br>"."<b>Objet :</b> ".$objet."<br>"."<br><b>Message :</b> ".$message;
+        //email setting
+        $mail->isHTML(true);
+        $mail->setFrom(PARAMS['no_replay'], $nom);
+        $mail->AddAddress(PARAMS['contact_mail']);
+        $mail->Subject = ("$email ($objet)");
+        $mail->Body = "<b>Nom : </b>".$nom."<br>"."<b>Prénom : </b>".$prenom."<br>". "<b>Contact : </b>".$contact."<br>". "<b>Email :</b> ".$email."<br>"."<b>Objet :</b> ".$objet."<br>"."<br><b>Message :</b> ".$message;
 
+        if ($mail->send()) {
+            echo "<script type='text/javascript'>
+                   Swal.fire(
+                  'Message envoyé!',
+                  'Veuillez cliquer sur le boutton ci-dessous !',
+                  'success'
+                );
+                var btnSwalls = document.getElementsByClassName('swal2-confirm');
+                        for(var i = 0; i<btnSwalls.length; i++)
+                        {
+                          btnSwalls[i].addEventListener('click', function(e){
+                            e.preventDefault();
+                            window.location = 'contact.php';
+                            })
+                        }
+                </script>";
+        }else{
+            echo "<script type='text/javascript'>
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...Une erreur s\'est produite',
+                      text: 'Veuillez actualiser la page et ressaisir les informations!'
+                    });
+                    var btnSwalls = document.getElementsByClassName('swal2-confirm');
+                    for(var i = 0; i<btnSwalls.length; i++)
+                    {
+                        btnSwalls[i].addEventListener('click', function(e){
+                            e.preventDefault();
+                            window.location = 'contact.php';
+                            })
+                    }
+                </script>";
+        }
 
 	} catch (Exception $e) {
+        $message = $e->getMessage();
+        echo "<script type='text/javascript'>
+                        Swal.fire({
+                          icon: 'error',
+                          title: 'Oops...Une erreur s\'est produite',
+                          text: 'Veuillez actualiser la page et ressaisir les informations! : $message'
+                        });
+                        var btnSwalls = document.getElementsByClassName('swal2-confirm');
+                        for(var i = 0; i<btnSwalls.length; i++)
+                        {
+                            btnSwalls[i].addEventListener('click', function(e){
+                                e.preventDefault();
+                                window.location = 'contact.php';
+                                })
+                        }
+                    </script>";
 	    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 	}
 
-	if ($mail->send()) {
-		echo "<script type='text/javascript'>
-               Swal.fire(
-              'Message envoyé!',
-              'Veuillez cliquer sur le boutton ci-dessous !',
-              'success'
-            );
-            var btnSwalls = document.getElementsByClassName('swal2-confirm');
-                    for(var i = 0; i<btnSwalls.length; i++)
-                    {
-                      btnSwalls[i].addEventListener('click', function(e){
-                        e.preventDefault();
-                        window.location = 'contact.php';
-                        })
-                    }
-            </script>";
-	}else{
-		echo "<script type='text/javascript'>
-				Swal.fire({
-				  icon: 'error',
-				  title: 'Oops...Une erreur s\'est produite',
-				  text: 'Veuillez actualiser la page et ressaisir les informations!'
-				});
-				var btnSwalls = document.getElementsByClassName('swal2-confirm');
-				for(var i = 0; i<btnSwalls.length; i++)
-				{
-					btnSwalls[i].addEventListener('click', function(e){
-						e.preventDefault();
-						window.location = 'contact.php';
-						})
-				}
-			</script>";
-	}
 
 	}
  ?>
