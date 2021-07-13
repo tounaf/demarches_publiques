@@ -33,7 +33,7 @@ body {
     container: document.getElementById("cookieconsent"),
     palette:{
      popup: {background: "black"},
-     button: {background: "#e0e0e0"},
+     button: {background: "#0b6ba8"},
     },
     revokable: true,
     onStatusChange: function(status) {

@@ -112,6 +112,9 @@ $_SESSION['timeout']=time();
                     <td><?php echo $row['telephone_acte']; ?></td>
                     <td>
                       <center>
+                        <a href="traitement/casierJudiciaire_facture.php?id=<?php echo $row['id_casier']; ?>">
+                          <button class="btn btn-primary"><i class="fa fa-money"></i></button>
+                        </a>
                       	<a href="traitement/casierJudiciaire_voir.php?id=<?php echo $row['id_casier']; ?>">
                           <button class="btn btn-info"><i class="fa fa-eye"></i></button>
                         </a>

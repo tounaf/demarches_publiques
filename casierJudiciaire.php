@@ -192,7 +192,7 @@
             <h5 class="">Téléchargez vos justificatifs d'identité</h5>
             <p>Un justificatif d'identité est obligatoire pour le traitement de la demande de casier judiciaire de toutes personnes nées à l’étranger. </p>
             <p>Vous pouvez télécharger jusqu’à <b>4 fichiers maximum</b>. Les pièces acceptées sont: <b>une copie recto verso de votre carte d'identité nationale française ou étrangère, ou une copie recto-verso de votre carte de séjour, ou une copie de votre passeport français ou étranger, ou une copie de votre acte de naissance.</b></p>
-            <b><p style="color: #ee2436;">(*) Veuillez insérer uniquement des fichiers .pdf ou .PDF</p></b>
+            <b><p style="color: #ee2436;">(*) Taille maximale autorisée par fichier : 30Mo</p></b>
             <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_un">
             <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_deux" >
             <input class="form-control" style="padding-bottom: 35px;" type="file" name="piece_trois" >
