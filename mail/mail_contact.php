@@ -8,7 +8,7 @@
 
 
 <?php
-
+    require_once '../parameters.php';
 	if (!empty($_POST['nom']) && !empty($_POST['prenom'])&& !empty($_POST['contact']) && !empty($_POST['email']) && !empty($_POST["message"])) {
 
 	$nom = $_POST['nom'];
@@ -24,17 +24,17 @@ try {
 
     //Server settings
 	$mail->isSMTP();
-	$mail->Host = "smtp.gmail.com";
+	$mail->Host = PARAMS['mailer_host'];
 	$mail->SMTPAuth = true;
-	$mail->Username = "fenitrar07@gmail.com";
-	$mail->Password = 'fenitraAppleID1321@@@';
-	$mail->Port = 465;
-	$mail->SMTPSecure = "ssl";
+	$mail->Username = PARAMS['mailer_user'];
+	$mail->Password = PARAMS['mailer_password'];
+	$mail->Port = PARAMS['mailer_port'];;
+//	$mail->SMTPSecure = "ssl";
 
 	//email setting
 	$mail->isHTML(true);
-	$mail->setFrom($email, $nom);
-	$mail->AddAddress("contact@go-dominican-republic.com");
+	$mail->setFrom(PARAMS['no_replay'], $nom);
+	$mail->AddAddress(PARAMS['contact_mail']);
 	$mail->Subject = ("$email ($objet)");
 	$mail->Body = "<b>Nom : </b>".$nom."<br>"."<b>Prénom : </b>".$prenom."<br>". "<b>Contact : </b>".$contact."<br>". "<b>Email :</b> ".$email."<br>"."<b>Objet :</b> ".$objet."<br>"."<br><b>Message :</b> ".$message;
 
