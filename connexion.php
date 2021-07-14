@@ -1,9 +1,9 @@
 <?php
   require_once './parameters.php';
-  $servername = PARAMS['database_host'];
-  $username = PARAMS['database_user'];
-  $password = PARAMS['database_password'];
-  $dbname = PARAMS['database_name'];
+  $servername = PARAMS['localhost'];
+  $username = PARAMS['root'];
+  $password = PARAMS[''];
+  $dbname = PARAMS['demarches_publiques'];
 
   // Create connection
   $conn = mysqli_connect($servername, $username, $password, $dbname);
