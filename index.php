@@ -108,7 +108,7 @@
         <button class="boutton_rose">REMPLIR LE FORMULAIRE DE DEMANDE</button>
       </a>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 mobile_pt">
       <center>
         <img class="logos" src="assets/img/form.png">
       </center>
@@ -119,7 +119,7 @@
         <button class="boutton_rose bouttons_vague1">REMPLIR LE FORMULAIRE DE DEMANDE</button>
       </a>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 mobile_pt">
       <center>
         <img class="logos" src="assets/img/folder.png">
       </center>
@@ -130,7 +130,7 @@
         <button class="boutton_rose bouttons_vague1">REMPLIR LE FORMULAIRE DE DEMANDE</button>
       </a>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-3 mobile_pt">
       <center>
         <img class="logos" src="assets/img/mariage.png">
       </center>

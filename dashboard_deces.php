@@ -93,6 +93,7 @@ $_SESSION['timeout']=time();
                     <th style="">Adresse e-mail</th>
                     <th style="">Téléphone</th>
                     <th style="">Actions</th>
+                    <th style="">Status</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -123,6 +124,19 @@ $_SESSION['timeout']=time();
                           <i class="fa fa-trash"></i>
                         </a>
                       </center>
+                    </td>
+                    <td>
+ <!-- -------------------- STATUS : ----------------------- -->
+                      <!-- SI la personne a finalisé le paiement -->
+                      <div style="display: none;">
+                        <p style="color: #63cf8c;">Paid</p>
+                      </div>
+                      <!-- SI la personne s'est arrêtée au formulaire -->
+                      <div >
+                        <a href="" style="color: red;">
+                          Unpaid
+                        </a>
+                      </div>
                     </td>
                   </tr>
                 </tbody>

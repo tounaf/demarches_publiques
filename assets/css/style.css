@@ -1,5 +1,3 @@
-
-
 li, ul, a, p, button, label, input {
   /*font-family: Copperplate;*/
   font-family: Georgia;
@@ -250,5 +248,14 @@ p, ul, li {
   margin-right: -35px;
 }
 
+  .non_affilié {
+    font-size: 10px;
+    color: grey;
+    font-family: Georgia;
+}
+
+  .mobile_pt {
+    padding-top: 10px;
+  }
 
 }
