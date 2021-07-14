@@ -31,6 +31,7 @@
 
 
 <?php
+require_once '../parameters.php';
 	include('../connexion/connexion.php');
 
 	if (!empty($_GET["id"])) {

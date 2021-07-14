@@ -9,5 +9,5 @@
 
 	$mail = new PHPMailer();
 	$mail->CharSet = PHPMailer::CHARSET_UTF8;
-	/*$mail->SMTPDebug = SMTP::DEBUG_SERVER; */
+	$mail->SMTPDebug = SMTP::DEBUG_SERVER;
  ?>

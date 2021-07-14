@@ -28,7 +28,7 @@
 
 <?php
   $id = $_GET['id'];
-
+require_once '../parameters.php';
   include('../connexion/connexion.php');
 
   // sql to delete a record

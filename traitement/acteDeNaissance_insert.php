@@ -27,7 +27,7 @@
 <body>
 
 <?php
-
+require_once '../parameters.php';
 include('../connexion/connexion.php');
 
 if(
