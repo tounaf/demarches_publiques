@@ -129,6 +129,13 @@ p, ul, li {
 
 .slogan1 {
   font-size: 11px;
+  margin-top: -18px;
+}
+
+.non_affilié {
+  font-size: 13px;
+  color: grey;
+  font-family: Georgia;
 }
 
 .nom_site {

@@ -116,10 +116,10 @@ a:hover {
 
 <!-- ECRITO -->
 <div class="container-fluid">
-  <div class="row pt-2">
+  <div class="row">
     <div class="col-md-12">
       <center>
-        <p>Site indépendant de l'administration française, offrant un service d'accompagnement pour faciliter l'obtention d'actes civils</p>
+        <span class="non_affilié">Site indépendant de l'administration française, offrant un service d'accompagnement pour faciliter l'obtention d'actes civils</span>
       </center>
     </div>
   </div>
