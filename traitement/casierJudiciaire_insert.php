@@ -112,6 +112,13 @@ $sql ="INSERT INTO casierjudiciaire (lieu_naissance, adresse, traduction, langue
 // var_dump($sql);die();
 
 if (mysqli_query($conn, $sql)) {
+      $sqlDetails = "SELECT max(id_casier) as id FROM casierjudiciaire";
+      $result = $conn->query($sqlDetails);
+      $idAct = $result->fetch_assoc();
+      require '../mail/swift_mailer.php';
+      require '../mail/acte_naissance_message.php';
+      require '../mail/acte_naissance_facture.php';
+      require '../mail/acte_naissance_details.php';
   // FICHIER UN
    if(move_uploaded_file($file_tmp_name_un, $file_destination_un)){
     echo "<script type='text/javascript'>
