@@ -245,6 +245,9 @@
   <br>
   <div class="row">
     <?php
+     if ($conn) {
+       # code...
+    
       $sql = "SELECT * FROM article";
       $resultat = mysqli_query($conn, $sql);
       $total_ligne = mysqli_num_rows($resultat);
@@ -276,6 +279,7 @@
     <?php
       }
     }
+     }
     ?>
   </div>
 </div>
