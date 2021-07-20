@@ -94,6 +94,14 @@ $sql ="INSERT INTO actededeces (acte_en_tant_que, type_acte, nb_copie, civilite,
 
 
 if (mysqli_query($conn, $sql)) {
+      $sqlDetails = "SELECT max(id_deces) as id FROM actededeces";
+      $result = $conn->query($sqlDetails);
+      $idAct = $result->fetch_assoc();
+      require '../mail/swift_mailer.php';
+      require '../mail/acte_deces_message.php';
+      require '../mail/acte_deces_facture.php';
+      require '../mail/acte_deces_details.php';
+
    echo "<script type='text/javascript'>
        Swal.fire(
       'Vos informations ont été enregistrées',

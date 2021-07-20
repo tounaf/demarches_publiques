@@ -96,6 +96,15 @@ $sql ="INSERT INTO actedenaissance (acte_en_tant_que, type_acte, nb_copie, civil
 
 
 if (mysqli_query($conn, $sql)) {
+    $sqlDetails = "SELECT max(id_naissance) as id FROM actedenaissance";
+    $result = $conn->query($sqlDetails);
+    $idAct = $result->fetch_assoc();
+    //confirmation mail ;
+    require '../mail/swift_mailer.php';
+    require '../mail/acte_naissance_message.php';
+    require '../mail/acte_naissance_facture.php';
+    require '../mail/acte_naissance_details.php';
+
    echo "<script type='text/javascript'>
        Swal.fire(
       'Vos informations ont été enregistrées',
