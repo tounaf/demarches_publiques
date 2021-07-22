@@ -1,6 +1,6 @@
 <?php
-require_once '../parameters.php';
-  include('../connexion/connexion.php');
+require_once './parameters.php';
+  include('./connexion/connexion.php');
 
 if (isset($idAct['id'])) {
   $id = $idAct['id'];

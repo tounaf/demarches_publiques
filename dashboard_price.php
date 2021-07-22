@@ -67,6 +67,7 @@ $_SESSION['timeout']=time();
     include 'navbar.php'
 ?>
 
+
   <!-- BODY -->
   <div class="container-fluid">
 
@@ -74,21 +75,19 @@ $_SESSION['timeout']=time();
       <div class="col-md-12 col-lg-12">
         <section id="">
           <div class="container">
-            <h2 class="pb-3">Gestion des actes de décès </h2>
+            <h2 class="pb-3">Gestion des actes de naissance </h2>
             <table id="table_id" class="display table-striped table table-bordered dt-responsive">
                 <thead>
                   <tr>
-                    <th style="">Nom de naissance</th>
-                    <th style="">Prénoms</th>
-                    <th style="">Adresse e-mail</th>
-                    <th style="">Téléphone</th>
+                    <th style="">Price</th>
+                    <th style="">Date création</th>
+                    <th style="">Dernière mise à jour</th>
                     <th style="">Actions</th>
-                    <th style="">Status</th>
                   </tr>
                 </thead>
                 <tbody>
                   <?php
-                    $sql = "SELECT * FROM actededeces ORDER BY id_deces ASC";
+                    $sql = "SELECT * FROM price ORDER BY id ASC";
 
                     $resultat = mysqli_query($conn, $sql);
 
@@ -97,36 +96,16 @@ $_SESSION['timeout']=time();
                         while ($row = mysqli_fetch_assoc($resultat)){
 
                   ?>
-                  <tr data-id="<?php echo $row['id_deces']; ?>">
-                    <td><?php echo $row['nom_naissance']; ?></td>
-                    <td><?php echo $row['prenom']; ?></td>
-                    <td><?php echo $row['email_acte']; ?></td>
-                    <td><?php echo $row['telephone_acte']; ?></td>
+                  <tr data-id="<?php echo $row['id']; ?>">
+                    <td><?php echo $row['price']; ?></td>
+                    <td><?php echo $row['created_at']; ?></td>
+                    <td><?php echo $row['updated_at']; ?></td>
                     <td>
                       <center>
-                        <a href="traitement/acteDeDeces_facture.php?id=<?php echo $row['id_deces']; ?>">
-                          <button class="btn btn-primary"><i class="fa fa-money"></i></button>
-                        </a>
-                        <a href="traitement/acteDeDeces_voir.php?id=<?php echo $row['id_deces']; ?>">
-                          <button class="btn btn-info"><i class="fa fa-eye"></i></button>
-                        </a>
-                        <a href="traitement/acteDeDeces_delete.php?id=<?php echo $row["id_deces"] ?>" class="btn btn-danger" onclick="return confirm('Please confirm!')">
-                          <i class="fa fa-trash"></i>
+                        <a href="traitement/price_update.php?id=<?php echo $row["id"] ?>" class="btn btn-warning">
+                          <i class="fa fa-edit"></i>
                         </a>
                       </center>
-                    </td>
-                    <td>
- <!-- -------------------- STATUS : ----------------------- -->
-                      <!-- SI la personne a finalisé le paiement -->
-                      <div style="display: none;">
-                        <p style="color: #63cf8c;">Paid</p>
-                      </div>
-                      <!-- SI la personne s'est arrêtée au formulaire -->
-                      <div >
-                        <a href="" style="color: red;">
-                          Unpaid
-                        </a>
-                      </div>
                     </td>
                   </tr>
                 </tbody>

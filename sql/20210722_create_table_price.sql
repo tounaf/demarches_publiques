@@ -1,0 +1,7 @@
+CREATE TABLE price (
+ id INT(11) NOT NULL AUTO_INCREMENT,
+ price INT(11) NOT NULL,
+ created_at DATETIME,
+ updated_at DATETIME,
+ PRIMARY KEY (id)
+)

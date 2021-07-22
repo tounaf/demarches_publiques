@@ -100,15 +100,13 @@ if (mysqli_query($conn, $sql)) {
     $result = $conn->query($sqlDetails);
     $idAct = $result->fetch_assoc();
     //confirmation mail ;
-    require '../mail/swift_mailer.php';
-    require '../mail/acte_naissance_message.php';
-    require '../mail/acte_naissance_facture.php';
-    require '../mail/acte_naissance_details.php';
-
+    $tableName = 'actedenaissance';
+    $whereColone = "id_naissance";
+    $id = $idAct['id'].'_'.uniqid();
    echo "<script type='text/javascript'>
        Swal.fire(
       'Vos informations ont été enregistrées',
-      'Veuillez cliquer sur le boutton ci-dessous !',
+      'Veuillez cliquer sur le boutton ci-dessous pour proceder au paiement!',
       'success'
     );
     var btnSwalls = document.getElementsByClassName('swal2-confirm');
@@ -116,7 +114,7 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../acteDeNaissance.php';
+                window.location = '../checkout.php?id={$id}&fill={$whereColone}&ball={$tableName}';
                 })
             }
     </script>";
