@@ -2,7 +2,7 @@
  require './parameters.php';
 require './connexion/connexion.php';
 if (isset($_GET['id']) && isset($_GET['fill']) && isset($_GET['ball'])) {
-    $id = $_GET['id'];
+    $id = explode("_",$_GET['id'])[0];
     $tableName = $_GET['ball'];
     $whereColone = $_GET['fill'];
     $sql = "UPDATE $tableName set is_paid = true where $whereColone = $id";
@@ -11,9 +11,10 @@ if (isset($_GET['id']) && isset($_GET['fill']) && isset($_GET['ball'])) {
 
 
 require './mail/swift_mailer.php';
-require './mail/acte_naissance_message.php';
-require './mail/acte_naissance_facture.php';
-require './mail/acte_naissance_details.php';
+const DEMANDE_MAIL = PARAMS['demandes_mail'];
+require './mail/'.$tableName.'_message.php';
+require './mail/'.$tableName.'_facture.php';
+require './mail/'.$tableName.'_details.php';
 
 ?>
 <html>

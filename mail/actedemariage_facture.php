@@ -1,9 +1,6 @@
 <?php
-//const DEMANDE_MAIL = "devinbox.contact@gmail.com";
-//require("setting_mail.php");
-//require_once("swift_mailer.php");
 ob_start();
-require './templates/mail_acte_naissance_facture.php';
+require './templates/mail_acte_mariage_facture.php';
 $voir = ob_get_clean();
 // Create a message
 $message = (new Swift_Message('Confirmation'))

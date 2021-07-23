@@ -2,11 +2,8 @@
 require_once './parameters.php';
 include('./connexion/connexion.php');
 
-if (isset($idAct['id'])) {
-  $id = $idAct['id'];
-
+if (isset($id)) {
   $sqlVoir = "SELECT * FROM actedemariage WHERE id_mariage = $id";
-  // var_dump($sqlVoir);die();
   $result = $conn->query($sqlVoir);
   $data = $result->fetch_assoc();
 }

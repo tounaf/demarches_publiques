@@ -135,10 +135,9 @@ if (mysqli_query($conn, $sql)) {
       $sqlDetails = "SELECT max(id_mariage) as id FROM actedemariage";
       $result = $conn->query($sqlDetails);
       $idAct = $result->fetch_assoc();
-      require '../mail/swift_mailer.php';
-      require '../mail/acte_naissance_message.php';
-      require '../mail/acte_naissance_facture.php';
-      require '../mail/acte_naissance_details.php';
+      $tableName = 'actedemariage';
+      $whereColone = "id_mariage";
+      $id = $idAct['id'].'_'.uniqid();
    echo "<script type='text/javascript'>
        Swal.fire(
       'Vos informations ont été enregistrées',
@@ -150,7 +149,7 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../acteDeMariage.php';
+                window.location = '../checkout.php?id={$id}&fill={$whereColone}&ball={$tableName}';
                 })
             }
     </script>";

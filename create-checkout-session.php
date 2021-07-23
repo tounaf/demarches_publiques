@@ -6,7 +6,7 @@ require 'vendor/autoload.php';
 
 header('Content-Type: application/json');
 
-$MY_DOMAIN = 'http://demarches-publiques.com';
+$MY_DOMAIN = PARAMS['base_host'];
 $tableName = '';
 
 
@@ -14,11 +14,6 @@ $tableName = '';
 $colonne = $_POST['colonne'];
 $id = $_POST['id'];
 $table = $_POST['table'];
-//switch ($table) {
-//    //`actededeces``actedemariage``actedenaissance``casierjudiciaire`
-//    case 'actededeces':
-//
-//}
 $checkout_session = \Stripe\Checkout\Session::create([
   'payment_method_types' => ['card'],
   'metadata' => ['id' => 'test'],

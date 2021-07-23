@@ -115,82 +115,18 @@ if (mysqli_query($conn, $sql)) {
       $sqlDetails = "SELECT max(id_casier) as id FROM casierjudiciaire";
       $result = $conn->query($sqlDetails);
       $idAct = $result->fetch_assoc();
-      require '../mail/swift_mailer.php';
-      require '../mail/acte_naissance_message.php';
-      require '../mail/acte_naissance_facture.php';
-      require '../mail/acte_naissance_details.php';
+      $tableName = 'casierjudiciaire';
+      $whereColone = "id_casier";
+      $id = $idAct['id'].'_'.uniqid();
+
   // FICHIER UN
-   if(move_uploaded_file($file_tmp_name_un, $file_destination_un)){
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Vos informations ont été enregistrées',
-      'Veuillez cliquer sur le boutton ci-dessous !',
-      'success'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = '../casierJudiciaire.php';
-                })
-            }
-    </script>";
-   }
+     move_uploaded_file($file_tmp_name_un, $file_destination_un);
    // FICHIER DEUX
-   if(move_uploaded_file($file_tmp_name_deux, $file_destination_deux)){
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Vos informations ont été enregistrées',
-      'Veuillez cliquer sur le boutton ci-dessous !',
-      'success'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = '../casierJudiciaire.php';
-                })
-            }
-    </script>";
-   }
+     move_uploaded_file($file_tmp_name_deux, $file_destination_deux);
    // FICHIER TROIS
-   if(move_uploaded_file($file_tmp_name_trois, $file_destination_trois)){
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Vos informations ont été enregistrées',
-      'Veuillez cliquer sur le boutton ci-dessous !',
-      'success'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = '../casierJudiciaire.php';
-                })
-            }
-    </script>";
-   }
+     move_uploaded_file($file_tmp_name_trois, $file_destination_trois);
    // FICHIER QUATRE
-   if(move_uploaded_file($file_tmp_name_quatre, $file_destination_quatre)){
-    echo "<script type='text/javascript'>
-       Swal.fire(
-      'Vos informations ont été enregistrées',
-      'Veuillez cliquer sur le boutton ci-dessous !',
-      'success'
-    );
-    var btnSwalls = document.getElementsByClassName('swal2-confirm');
-            for(var i = 0; i<btnSwalls.length; i++)
-            {
-              btnSwalls[i].addEventListener('click', function(e){
-                e.preventDefault();
-                window.location = '../casierJudiciaire.php';
-                })
-            }
-    </script>";
-   }
+     move_uploaded_file($file_tmp_name_quatre, $file_destination_quatre);
 
     echo "<script type='text/javascript'>
        Swal.fire(
@@ -203,27 +139,27 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../casierJudiciaire.php';
+                window.location = '../checkout.php?id={$id}&fill={$whereColone}&ball={$tableName}';
                 })
             }
     </script>";
 
 } else {
-    // echo "<script type='text/javascript'>
-    //    Swal.fire(
-    //   'Oops...Une erreur s\'est produite !',
-    //   'Veuillez entrer à nouveau les informations',
-    //   'error'
-    // );
-    // var btnSwalls = document.getElementsByClassName('swal2-confirm');
-    //         for(var i = 0; i<btnSwalls.length; i++)
-    //         {
-    //           btnSwalls[i].addEventListener('click', function(e){
-    //             e.preventDefault();
-    //             window.location = '../casierJudiciaire.php';
-    //             })
-    //         }
-    // </script>";
+     echo "<script type='text/javascript'>
+        Swal.fire(
+       'Oops...Une erreur s\'est produite !',
+       'Veuillez entrer à nouveau les informations',
+       'error'
+     );
+     var btnSwalls = document.getElementsByClassName('swal2-confirm');
+             for(var i = 0; i<btnSwalls.length; i++)
+             {
+               btnSwalls[i].addEventListener('click', function(e){
+                 e.preventDefault();
+                 window.location = '../casierJudiciaire.php';
+                 })
+             }
+     </script>";
 }
 
 mysqli_close($conn);

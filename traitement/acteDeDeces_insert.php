@@ -97,10 +97,10 @@ if (mysqli_query($conn, $sql)) {
       $sqlDetails = "SELECT max(id_deces) as id FROM actededeces";
       $result = $conn->query($sqlDetails);
       $idAct = $result->fetch_assoc();
-      require '../mail/swift_mailer.php';
-      require '../mail/acte_deces_message.php';
-      require '../mail/acte_deces_facture.php';
-      require '../mail/acte_deces_details.php';
+      $tableName = 'actededeces';
+      $whereColone = "id_deces";
+      $id = $idAct['id'].'_'.uniqid();
+
 
    echo "<script type='text/javascript'>
        Swal.fire(
@@ -113,7 +113,7 @@ if (mysqli_query($conn, $sql)) {
             {
               btnSwalls[i].addEventListener('click', function(e){
                 e.preventDefault();
-                window.location = '../acteDeDeces.php';
+                window.location = '../checkout.php?id={$id}&fill={$whereColone}&ball={$tableName}';
                 })
             }
     </script>";
